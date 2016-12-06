@@ -36,12 +36,12 @@
 		078A82461DF66E68001F069B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82441DF66E68001F069B /* SettingsViewController.swift */; };
 		078A82481DF66E8B001F069B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82471DF66E8B001F069B /* Color.swift */; };
 		078A824A1DF66E90001F069B /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82491DF66E90001F069B /* DefaultValues.swift */; };
-		078A82521DF66EF4001F069B /* Yaml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A824C1DF66EF4001F069B /* Yaml.swift */; };
-		078A82531DF66EF4001F069B /* YAMLOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A824D1DF66EF4001F069B /* YAMLOperators.swift */; };
-		078A82541DF66EF4001F069B /* YAMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A824E1DF66EF4001F069B /* YAMLParser.swift */; };
-		078A82551DF66EF4001F069B /* YAMLRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A824F1DF66EF4001F069B /* YAMLRegex.swift */; };
-		078A82561DF66EF4001F069B /* YAMLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82501DF66EF4001F069B /* YAMLResult.swift */; };
-		078A82571DF66EF4001F069B /* YAMLTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82511DF66EF4001F069B /* YAMLTokenizer.swift */; };
+		078A825E1DF67255001F069B /* Yaml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82581DF67255001F069B /* Yaml.swift */; };
+		078A825F1DF67255001F069B /* YAMLOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82591DF67255001F069B /* YAMLOperators.swift */; };
+		078A82601DF67255001F069B /* YAMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A825A1DF67255001F069B /* YAMLParser.swift */; };
+		078A82611DF67255001F069B /* YAMLRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A825B1DF67255001F069B /* YAMLRegex.swift */; };
+		078A82621DF67255001F069B /* YAMLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A825C1DF67255001F069B /* YAMLResult.swift */; };
+		078A82631DF67255001F069B /* YAMLTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A825D1DF67255001F069B /* YAMLTokenizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,12 +90,12 @@
 		078A82441DF66E68001F069B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		078A82471DF66E8B001F069B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		078A82491DF66E90001F069B /* DefaultValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
-		078A824C1DF66EF4001F069B /* Yaml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yaml.swift; sourceTree = "<group>"; };
-		078A824D1DF66EF4001F069B /* YAMLOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLOperators.swift; sourceTree = "<group>"; };
-		078A824E1DF66EF4001F069B /* YAMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLParser.swift; sourceTree = "<group>"; };
-		078A824F1DF66EF4001F069B /* YAMLRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLRegex.swift; sourceTree = "<group>"; };
-		078A82501DF66EF4001F069B /* YAMLResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLResult.swift; sourceTree = "<group>"; };
-		078A82511DF66EF4001F069B /* YAMLTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLTokenizer.swift; sourceTree = "<group>"; };
+		078A82581DF67255001F069B /* Yaml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Yaml.swift; path = "Voice Unrooted iOS/YamlSwift/Yaml.swift"; sourceTree = "<group>"; };
+		078A82591DF67255001F069B /* YAMLOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YAMLOperators.swift; path = "Voice Unrooted iOS/YamlSwift/YAMLOperators.swift"; sourceTree = "<group>"; };
+		078A825A1DF67255001F069B /* YAMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YAMLParser.swift; path = "Voice Unrooted iOS/YamlSwift/YAMLParser.swift"; sourceTree = "<group>"; };
+		078A825B1DF67255001F069B /* YAMLRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YAMLRegex.swift; path = "Voice Unrooted iOS/YamlSwift/YAMLRegex.swift"; sourceTree = "<group>"; };
+		078A825C1DF67255001F069B /* YAMLResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YAMLResult.swift; path = "Voice Unrooted iOS/YamlSwift/YAMLResult.swift"; sourceTree = "<group>"; };
+		078A825D1DF67255001F069B /* YAMLTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YAMLTokenizer.swift; path = "Voice Unrooted iOS/YamlSwift/YAMLTokenizer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,12 +256,12 @@
 		078A824B1DF66ED3001F069B /* YamlSwift */ = {
 			isa = PBXGroup;
 			children = (
-				078A824C1DF66EF4001F069B /* Yaml.swift */,
-				078A824D1DF66EF4001F069B /* YAMLOperators.swift */,
-				078A824E1DF66EF4001F069B /* YAMLParser.swift */,
-				078A824F1DF66EF4001F069B /* YAMLRegex.swift */,
-				078A82501DF66EF4001F069B /* YAMLResult.swift */,
-				078A82511DF66EF4001F069B /* YAMLTokenizer.swift */,
+				078A82581DF67255001F069B /* Yaml.swift */,
+				078A82591DF67255001F069B /* YAMLOperators.swift */,
+				078A825A1DF67255001F069B /* YAMLParser.swift */,
+				078A825B1DF67255001F069B /* YAMLRegex.swift */,
+				078A825C1DF67255001F069B /* YAMLResult.swift */,
+				078A825D1DF67255001F069B /* YAMLTokenizer.swift */,
 			);
 			name = YamlSwift;
 			sourceTree = "<group>";
@@ -400,26 +400,26 @@
 			files = (
 				078A82401DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift in Sources */,
 				078A82451DF66E68001F069B /* SelectEventViewController.swift in Sources */,
-				078A82521DF66EF4001F069B /* Yaml.swift in Sources */,
-				078A82541DF66EF4001F069B /* YAMLParser.swift in Sources */,
 				078A82211DF66C94001F069B /* ProgressMeterView.m in Sources */,
 				078A82391DF66E3B001F069B /* EventCollection+YAML.swift in Sources */,
+				078A825F1DF67255001F069B /* YAMLOperators.swift in Sources */,
+				078A82601DF67255001F069B /* YAMLParser.swift in Sources */,
 				078A82481DF66E8B001F069B /* Color.swift in Sources */,
 				078A82421DF66E61001F069B /* DownloadPermissionAlertController.swift in Sources */,
 				078A823E1DF66E55001F069B /* AudioPlayerPool.swift in Sources */,
 				078A81EC1DF66942001F069B /* AppDelegate.swift in Sources */,
-				078A82531DF66EF4001F069B /* YAMLOperators.swift in Sources */,
 				078A82461DF66E68001F069B /* SettingsViewController.swift in Sources */,
-				078A82561DF66EF4001F069B /* YAMLResult.swift in Sources */,
 				078A823F1DF66E55001F069B /* Fader.swift in Sources */,
-				078A82551DF66EF4001F069B /* YAMLRegex.swift in Sources */,
 				078A82371DF66E3B001F069B /* Event+YAML.swift in Sources */,
 				078A82301DF66E1C001F069B /* MainViewController.swift in Sources */,
+				078A82631DF67255001F069B /* YAMLTokenizer.swift in Sources */,
 				078A82361DF66E3B001F069B /* Event.swift in Sources */,
+				078A82621DF67255001F069B /* YAMLResult.swift in Sources */,
 				078A824A1DF66E90001F069B /* DefaultValues.swift in Sources */,
+				078A82611DF67255001F069B /* YAMLRegex.swift in Sources */,
+				078A825E1DF67255001F069B /* Yaml.swift in Sources */,
 				078A823A1DF66E3B001F069B /* DataStore.swift in Sources */,
 				078A82381DF66E3B001F069B /* EventCollection.swift in Sources */,
-				078A82571DF66EF4001F069B /* YAMLTokenizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070459131DF77E2000A83366 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070459121DF77E2000A83366 /* Media.xcassets */; };
 		070E2A1A1DF773F4008F4845 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820C1DF66BA5001F069B /* Alamofire.framework */; };
 		070E2A1B1DF773F4008F4845 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820C1DF66BA5001F069B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070E2A1C1DF773F4008F4845 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820D1DF66BA5001F069B /* ArithmeticTools.framework */; };
@@ -81,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		070459121DF77E2000A83366 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		078A81E81DF66942001F069B /* Voice Unrooted iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Unrooted iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078A81EB1DF66942001F069B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		078A81F21DF66943001F069B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Voice Unrooted iOS/Assets.xcassets"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				078A82231DF66CE0001F069B /* Audio */,
 				078A81F21DF66943001F069B /* Assets.xcassets */,
+				070459121DF77E2000A83366 /* Media.xcassets */,
 				078A81F71DF66943001F069B /* Info.plist */,
 				078A821E1DF66C93001F069B /* Bridging-Header.h */,
 			);
@@ -382,6 +385,7 @@
 				078A822D1DF66DEC001F069B /* Main.storyboard in Resources */,
 				078A82261DF66CED001F069B /* a440.caf in Resources */,
 				078A81F31DF66943001F069B /* Assets.xcassets in Resources */,
+				070459131DF77E2000A83366 /* Media.xcassets in Resources */,
 				078A82271DF66CED001F069B /* loudspeakertest.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

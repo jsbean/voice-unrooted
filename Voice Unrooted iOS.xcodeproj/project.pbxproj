@@ -29,7 +29,6 @@
 		078A823A1DF66E3B001F069B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82351DF66E3B001F069B /* DataStore.swift */; };
 		078A823E1DF66E55001F069B /* AudioPlayerPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A823B1DF66E55001F069B /* AudioPlayerPool.swift */; };
 		078A823F1DF66E55001F069B /* Fader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A823C1DF66E55001F069B /* Fader.swift */; };
-		078A82401DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A823D1DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift */; };
 		078A82421DF66E61001F069B /* DownloadPermissionAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82411DF66E61001F069B /* DownloadPermissionAlertController.swift */; };
 		078A82451DF66E68001F069B /* SelectEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82431DF66E68001F069B /* SelectEventViewController.swift */; };
 		078A82461DF66E68001F069B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82441DF66E68001F069B /* SettingsViewController.swift */; };
@@ -82,7 +81,6 @@
 		078A82351DF66E3B001F069B /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		078A823B1DF66E55001F069B /* AudioPlayerPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerPool.swift; sourceTree = "<group>"; };
 		078A823C1DF66E55001F069B /* Fader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fader.swift; sourceTree = "<group>"; };
-		078A823D1DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AKAudioPlayer+isDonePlaying.swift"; sourceTree = "<group>"; };
 		078A82411DF66E61001F069B /* DownloadPermissionAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadPermissionAlertController.swift; sourceTree = "<group>"; };
 		078A82431DF66E68001F069B /* SelectEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEventViewController.swift; sourceTree = "<group>"; };
 		078A82441DF66E68001F069B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -194,9 +192,9 @@
 		078A82221DF66CD2001F069B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				078A82231DF66CE0001F069B /* Audio */,
 				078A81F21DF66943001F069B /* Assets.xcassets */,
 				078A81F71DF66943001F069B /* Info.plist */,
-				078A82231DF66CE0001F069B /* Audio */,
 				078A821E1DF66C93001F069B /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
@@ -228,7 +226,6 @@
 			children = (
 				078A823B1DF66E55001F069B /* AudioPlayerPool.swift */,
 				078A823C1DF66E55001F069B /* Fader.swift */,
-				078A823D1DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift */,
 			);
 			name = "Audio Playback";
 			sourceTree = "<group>";
@@ -398,7 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078A82401DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift in Sources */,
 				078A82451DF66E68001F069B /* SelectEventViewController.swift in Sources */,
 				078A82391DF66E3B001F069B /* EventCollection+YAML.swift in Sources */,
 				078A825F1DF67255001F069B /* YAMLOperators.swift in Sources */,
@@ -636,6 +632,7 @@
 				078A82071DF66943001F069B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		078A82081DF66943001F069B /* Build configuration list for PBXNativeTarget "Voice Unrooted iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -644,6 +641,7 @@
 				078A820A1DF66943001F069B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

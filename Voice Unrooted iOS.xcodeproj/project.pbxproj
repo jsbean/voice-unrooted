@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		078A81EC1DF66942001F069B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A81EB1DF66942001F069B /* AppDelegate.swift */; };
-		078A81EE1DF66942001F069B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A81ED1DF66942001F069B /* ViewController.swift */; };
-		078A81F11DF66943001F069B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A81EF1DF66943001F069B /* Main.storyboard */; };
 		078A81F31DF66943001F069B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F21DF66943001F069B /* Assets.xcassets */; };
 		078A81F61DF66943001F069B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F41DF66943001F069B /* LaunchScreen.storyboard */; };
 		078A82011DF66943001F069B /* Voice_Unrooted_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82001DF66943001F069B /* Voice_Unrooted_iOSTests.swift */; };
@@ -20,10 +18,30 @@
 		078A82181DF66BA5001F069B /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82101DF66BA5001F069B /* DictionaryTools.framework */; };
 		078A82191DF66BA5001F069B /* ProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; };
 		078A821A1DF66BA5001F069B /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; };
-		078A821B1DF66BA5001F069B /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82131DF66BA5001F069B /* Yaml.framework */; };
 		078A82211DF66C94001F069B /* ProgressMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 078A82201DF66C94001F069B /* ProgressMeterView.m */; };
 		078A82261DF66CED001F069B /* a440.caf in Resources */ = {isa = PBXBuildFile; fileRef = 078A82241DF66CED001F069B /* a440.caf */; };
 		078A82271DF66CED001F069B /* loudspeakertest.caf in Resources */ = {isa = PBXBuildFile; fileRef = 078A82251DF66CED001F069B /* loudspeakertest.caf */; };
+		078A822D1DF66DEC001F069B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A822C1DF66DEC001F069B /* Main.storyboard */; };
+		078A82301DF66E1C001F069B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A822F1DF66E1C001F069B /* MainViewController.swift */; };
+		078A82361DF66E3B001F069B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82311DF66E3B001F069B /* Event.swift */; };
+		078A82371DF66E3B001F069B /* Event+YAML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82321DF66E3B001F069B /* Event+YAML.swift */; };
+		078A82381DF66E3B001F069B /* EventCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82331DF66E3B001F069B /* EventCollection.swift */; };
+		078A82391DF66E3B001F069B /* EventCollection+YAML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82341DF66E3B001F069B /* EventCollection+YAML.swift */; };
+		078A823A1DF66E3B001F069B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82351DF66E3B001F069B /* DataStore.swift */; };
+		078A823E1DF66E55001F069B /* AudioPlayerPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A823B1DF66E55001F069B /* AudioPlayerPool.swift */; };
+		078A823F1DF66E55001F069B /* Fader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A823C1DF66E55001F069B /* Fader.swift */; };
+		078A82401DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A823D1DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift */; };
+		078A82421DF66E61001F069B /* DownloadPermissionAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82411DF66E61001F069B /* DownloadPermissionAlertController.swift */; };
+		078A82451DF66E68001F069B /* SelectEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82431DF66E68001F069B /* SelectEventViewController.swift */; };
+		078A82461DF66E68001F069B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82441DF66E68001F069B /* SettingsViewController.swift */; };
+		078A82481DF66E8B001F069B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82471DF66E8B001F069B /* Color.swift */; };
+		078A824A1DF66E90001F069B /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82491DF66E90001F069B /* DefaultValues.swift */; };
+		078A82521DF66EF4001F069B /* Yaml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A824C1DF66EF4001F069B /* Yaml.swift */; };
+		078A82531DF66EF4001F069B /* YAMLOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A824D1DF66EF4001F069B /* YAMLOperators.swift */; };
+		078A82541DF66EF4001F069B /* YAMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A824E1DF66EF4001F069B /* YAMLParser.swift */; };
+		078A82551DF66EF4001F069B /* YAMLRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A824F1DF66EF4001F069B /* YAMLRegex.swift */; };
+		078A82561DF66EF4001F069B /* YAMLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82501DF66EF4001F069B /* YAMLResult.swift */; };
+		078A82571DF66EF4001F069B /* YAMLTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82511DF66EF4001F069B /* YAMLTokenizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,11 +57,9 @@
 /* Begin PBXFileReference section */
 		078A81E81DF66942001F069B /* Voice Unrooted iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Unrooted iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078A81EB1DF66942001F069B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		078A81ED1DF66942001F069B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		078A81F01DF66943001F069B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		078A81F21DF66943001F069B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		078A81F21DF66943001F069B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Voice Unrooted iOS/Assets.xcassets"; sourceTree = "<group>"; };
 		078A81F51DF66943001F069B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		078A81F71DF66943001F069B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		078A81F71DF66943001F069B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Voice Unrooted iOS/Info.plist"; sourceTree = "<group>"; };
 		078A81FC1DF66943001F069B /* Voice Unrooted iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voice Unrooted iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078A82001DF66943001F069B /* Voice_Unrooted_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice_Unrooted_iOSTests.swift; sourceTree = "<group>"; };
 		078A82021DF66943001F069B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,12 +70,32 @@
 		078A82101DF66BA5001F069B /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/iOS/DictionaryTools.framework; sourceTree = "<group>"; };
 		078A82111DF66BA5001F069B /* ProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProgressBar.framework; path = Carthage/Build/iOS/ProgressBar.framework; sourceTree = "<group>"; };
 		078A82121DF66BA5001F069B /* Timeline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timeline.framework; path = Carthage/Build/iOS/Timeline.framework; sourceTree = "<group>"; };
-		078A82131DF66BA5001F069B /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
 		078A821E1DF66C93001F069B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		078A821F1DF66C94001F069B /* ProgressMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressMeterView.h; sourceTree = "<group>"; };
 		078A82201DF66C94001F069B /* ProgressMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressMeterView.m; sourceTree = "<group>"; };
 		078A82241DF66CED001F069B /* a440.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = a440.caf; sourceTree = "<group>"; };
 		078A82251DF66CED001F069B /* loudspeakertest.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loudspeakertest.caf; sourceTree = "<group>"; };
+		078A822C1DF66DEC001F069B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		078A822F1DF66E1C001F069B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		078A82311DF66E3B001F069B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		078A82321DF66E3B001F069B /* Event+YAML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+YAML.swift"; sourceTree = "<group>"; };
+		078A82331DF66E3B001F069B /* EventCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollection.swift; sourceTree = "<group>"; };
+		078A82341DF66E3B001F069B /* EventCollection+YAML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EventCollection+YAML.swift"; sourceTree = "<group>"; };
+		078A82351DF66E3B001F069B /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		078A823B1DF66E55001F069B /* AudioPlayerPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerPool.swift; sourceTree = "<group>"; };
+		078A823C1DF66E55001F069B /* Fader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fader.swift; sourceTree = "<group>"; };
+		078A823D1DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AKAudioPlayer+isDonePlaying.swift"; sourceTree = "<group>"; };
+		078A82411DF66E61001F069B /* DownloadPermissionAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadPermissionAlertController.swift; sourceTree = "<group>"; };
+		078A82431DF66E68001F069B /* SelectEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectEventViewController.swift; sourceTree = "<group>"; };
+		078A82441DF66E68001F069B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		078A82471DF66E8B001F069B /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		078A82491DF66E90001F069B /* DefaultValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
+		078A824C1DF66EF4001F069B /* Yaml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Yaml.swift; sourceTree = "<group>"; };
+		078A824D1DF66EF4001F069B /* YAMLOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLOperators.swift; sourceTree = "<group>"; };
+		078A824E1DF66EF4001F069B /* YAMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLParser.swift; sourceTree = "<group>"; };
+		078A824F1DF66EF4001F069B /* YAMLRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLRegex.swift; sourceTree = "<group>"; };
+		078A82501DF66EF4001F069B /* YAMLResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLResult.swift; sourceTree = "<group>"; };
+		078A82511DF66EF4001F069B /* YAMLTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLTokenizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +108,6 @@
 				078A821A1DF66BA5001F069B /* Timeline.framework in Frameworks */,
 				078A82181DF66BA5001F069B /* DictionaryTools.framework in Frameworks */,
 				078A82151DF66BA5001F069B /* ArithmeticTools.framework in Frameworks */,
-				078A821B1DF66BA5001F069B /* Yaml.framework in Frameworks */,
 				078A82161DF66BA5001F069B /* ArrayTools.framework in Frameworks */,
 				078A82141DF66BA5001F069B /* Alamofire.framework in Frameworks */,
 			);
@@ -111,12 +146,13 @@
 		078A81EA1DF66942001F069B /* Voice Unrooted iOS */ = {
 			isa = PBXGroup;
 			children = (
+				078A822B1DF66D73001F069B /* Storyboards */,
+				078A822A1DF66D67001F069B /* Score */,
+				078A82291DF66D57001F069B /* Audio Playback */,
+				078A82281DF66D51001F069B /* ViewControllers */,
 				078A81EB1DF66942001F069B /* AppDelegate.swift */,
-				078A81ED1DF66942001F069B /* ViewController.swift */,
-				078A81EF1DF66943001F069B /* Main.storyboard */,
-				078A81F21DF66943001F069B /* Assets.xcassets */,
+				078A82491DF66E90001F069B /* DefaultValues.swift */,
 				078A81F41DF66943001F069B /* LaunchScreen.storyboard */,
-				078A81F71DF66943001F069B /* Info.plist */,
 			);
 			path = "Voice Unrooted iOS";
 			sourceTree = "<group>";
@@ -133,6 +169,7 @@
 		078A821C1DF66BA8001F069B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				078A824B1DF66ED3001F069B /* YamlSwift */,
 				078A821D1DF66C82001F069B /* ProgressMeterView */,
 				078A820C1DF66BA5001F069B /* Alamofire.framework */,
 				078A820D1DF66BA5001F069B /* ArithmeticTools.framework */,
@@ -141,7 +178,6 @@
 				078A82101DF66BA5001F069B /* DictionaryTools.framework */,
 				078A82111DF66BA5001F069B /* ProgressBar.framework */,
 				078A82121DF66BA5001F069B /* Timeline.framework */,
-				078A82131DF66BA5001F069B /* Yaml.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,6 +194,8 @@
 		078A82221DF66CD2001F069B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				078A81F21DF66943001F069B /* Assets.xcassets */,
+				078A81F71DF66943001F069B /* Info.plist */,
 				078A82231DF66CE0001F069B /* Audio */,
 				078A821E1DF66C93001F069B /* Bridging-Header.h */,
 			);
@@ -171,6 +209,61 @@
 				078A82251DF66CED001F069B /* loudspeakertest.caf */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		078A82281DF66D51001F069B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				078A82431DF66E68001F069B /* SelectEventViewController.swift */,
+				078A82441DF66E68001F069B /* SettingsViewController.swift */,
+				078A82411DF66E61001F069B /* DownloadPermissionAlertController.swift */,
+				078A822F1DF66E1C001F069B /* MainViewController.swift */,
+				078A82471DF66E8B001F069B /* Color.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		078A82291DF66D57001F069B /* Audio Playback */ = {
+			isa = PBXGroup;
+			children = (
+				078A823B1DF66E55001F069B /* AudioPlayerPool.swift */,
+				078A823C1DF66E55001F069B /* Fader.swift */,
+				078A823D1DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift */,
+			);
+			name = "Audio Playback";
+			sourceTree = "<group>";
+		};
+		078A822A1DF66D67001F069B /* Score */ = {
+			isa = PBXGroup;
+			children = (
+				078A82311DF66E3B001F069B /* Event.swift */,
+				078A82321DF66E3B001F069B /* Event+YAML.swift */,
+				078A82331DF66E3B001F069B /* EventCollection.swift */,
+				078A82341DF66E3B001F069B /* EventCollection+YAML.swift */,
+				078A82351DF66E3B001F069B /* DataStore.swift */,
+			);
+			name = Score;
+			sourceTree = "<group>";
+		};
+		078A822B1DF66D73001F069B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				078A822C1DF66DEC001F069B /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		078A824B1DF66ED3001F069B /* YamlSwift */ = {
+			isa = PBXGroup;
+			children = (
+				078A824C1DF66EF4001F069B /* Yaml.swift */,
+				078A824D1DF66EF4001F069B /* YAMLOperators.swift */,
+				078A824E1DF66EF4001F069B /* YAMLParser.swift */,
+				078A824F1DF66EF4001F069B /* YAMLRegex.swift */,
+				078A82501DF66EF4001F069B /* YAMLResult.swift */,
+				078A82511DF66EF4001F069B /* YAMLTokenizer.swift */,
+			);
+			name = YamlSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +354,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				078A81F61DF66943001F069B /* LaunchScreen.storyboard in Resources */,
+				078A822D1DF66DEC001F069B /* Main.storyboard in Resources */,
 				078A82261DF66CED001F069B /* a440.caf in Resources */,
 				078A81F31DF66943001F069B /* Assets.xcassets in Resources */,
-				078A81F11DF66943001F069B /* Main.storyboard in Resources */,
 				078A82271DF66CED001F069B /* loudspeakertest.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,9 +398,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078A82401DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift in Sources */,
+				078A82451DF66E68001F069B /* SelectEventViewController.swift in Sources */,
+				078A82521DF66EF4001F069B /* Yaml.swift in Sources */,
+				078A82541DF66EF4001F069B /* YAMLParser.swift in Sources */,
 				078A82211DF66C94001F069B /* ProgressMeterView.m in Sources */,
-				078A81EE1DF66942001F069B /* ViewController.swift in Sources */,
+				078A82391DF66E3B001F069B /* EventCollection+YAML.swift in Sources */,
+				078A82481DF66E8B001F069B /* Color.swift in Sources */,
+				078A82421DF66E61001F069B /* DownloadPermissionAlertController.swift in Sources */,
+				078A823E1DF66E55001F069B /* AudioPlayerPool.swift in Sources */,
 				078A81EC1DF66942001F069B /* AppDelegate.swift in Sources */,
+				078A82531DF66EF4001F069B /* YAMLOperators.swift in Sources */,
+				078A82461DF66E68001F069B /* SettingsViewController.swift in Sources */,
+				078A82561DF66EF4001F069B /* YAMLResult.swift in Sources */,
+				078A823F1DF66E55001F069B /* Fader.swift in Sources */,
+				078A82551DF66EF4001F069B /* YAMLRegex.swift in Sources */,
+				078A82371DF66E3B001F069B /* Event+YAML.swift in Sources */,
+				078A82301DF66E1C001F069B /* MainViewController.swift in Sources */,
+				078A82361DF66E3B001F069B /* Event.swift in Sources */,
+				078A824A1DF66E90001F069B /* DefaultValues.swift in Sources */,
+				078A823A1DF66E3B001F069B /* DataStore.swift in Sources */,
+				078A82381DF66E3B001F069B /* EventCollection.swift in Sources */,
+				078A82571DF66EF4001F069B /* YAMLTokenizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,14 +442,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		078A81EF1DF66943001F069B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				078A81F01DF66943001F069B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		078A81F41DF66943001F069B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -2,5 +2,4 @@ github "audioKit/AudioKit" == 3.4.2
 github "dn-m/ArithmeticTools" == 0.3.19
 github "dn-m/Timeline"
 github "dn-m/ProgressBar"
-github "behrang/YamlSwift" ~> 3.0
 github "Alamofire/Alamofire" ~> 4.0

@@ -7,17 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070E2A1A1DF773F4008F4845 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820C1DF66BA5001F069B /* Alamofire.framework */; };
+		070E2A1B1DF773F4008F4845 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820C1DF66BA5001F069B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		070E2A1C1DF773F4008F4845 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820D1DF66BA5001F069B /* ArithmeticTools.framework */; };
+		070E2A1D1DF773F4008F4845 /* ArithmeticTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820D1DF66BA5001F069B /* ArithmeticTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		070E2A1E1DF773F4008F4845 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820E1DF66BA5001F069B /* ArrayTools.framework */; };
+		070E2A1F1DF773F4008F4845 /* ArrayTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820E1DF66BA5001F069B /* ArrayTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		070E2A201DF773F4008F4845 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820F1DF66BA5001F069B /* AudioKit.framework */; };
+		070E2A211DF773F4008F4845 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820F1DF66BA5001F069B /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		070E2A221DF773F4008F4845 /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82101DF66BA5001F069B /* DictionaryTools.framework */; };
+		070E2A231DF773F4008F4845 /* DictionaryTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82101DF66BA5001F069B /* DictionaryTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		070E2A241DF773F4008F4845 /* ProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; };
+		070E2A251DF773F4008F4845 /* ProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		070E2A261DF773F4008F4845 /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; };
+		070E2A271DF773F4008F4845 /* Timeline.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		078A81EC1DF66942001F069B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A81EB1DF66942001F069B /* AppDelegate.swift */; };
 		078A81F31DF66943001F069B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F21DF66943001F069B /* Assets.xcassets */; };
 		078A81F61DF66943001F069B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F41DF66943001F069B /* LaunchScreen.storyboard */; };
 		078A82011DF66943001F069B /* Voice_Unrooted_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82001DF66943001F069B /* Voice_Unrooted_iOSTests.swift */; };
-		078A82141DF66BA5001F069B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820C1DF66BA5001F069B /* Alamofire.framework */; };
-		078A82151DF66BA5001F069B /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820D1DF66BA5001F069B /* ArithmeticTools.framework */; };
-		078A82161DF66BA5001F069B /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820E1DF66BA5001F069B /* ArrayTools.framework */; };
-		078A82171DF66BA5001F069B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820F1DF66BA5001F069B /* AudioKit.framework */; };
-		078A82181DF66BA5001F069B /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82101DF66BA5001F069B /* DictionaryTools.framework */; };
-		078A82191DF66BA5001F069B /* ProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; };
-		078A821A1DF66BA5001F069B /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; };
 		078A82261DF66CED001F069B /* a440.caf in Resources */ = {isa = PBXBuildFile; fileRef = 078A82241DF66CED001F069B /* a440.caf */; };
 		078A82271DF66CED001F069B /* loudspeakertest.caf in Resources */ = {isa = PBXBuildFile; fileRef = 078A82251DF66CED001F069B /* loudspeakertest.caf */; };
 		078A822D1DF66DEC001F069B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A822C1DF66DEC001F069B /* Main.storyboard */; };
@@ -52,6 +59,26 @@
 			remoteInfo = "Voice Unrooted iOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		070E2A281DF773F4008F4845 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				070E2A211DF773F4008F4845 /* AudioKit.framework in Embed Frameworks */,
+				070E2A251DF773F4008F4845 /* ProgressBar.framework in Embed Frameworks */,
+				070E2A271DF773F4008F4845 /* Timeline.framework in Embed Frameworks */,
+				070E2A231DF773F4008F4845 /* DictionaryTools.framework in Embed Frameworks */,
+				070E2A1D1DF773F4008F4845 /* ArithmeticTools.framework in Embed Frameworks */,
+				070E2A1F1DF773F4008F4845 /* ArrayTools.framework in Embed Frameworks */,
+				070E2A1B1DF773F4008F4845 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		078A81E81DF66942001F069B /* Voice Unrooted iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Unrooted iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,13 +128,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078A82171DF66BA5001F069B /* AudioKit.framework in Frameworks */,
-				078A82191DF66BA5001F069B /* ProgressBar.framework in Frameworks */,
-				078A821A1DF66BA5001F069B /* Timeline.framework in Frameworks */,
-				078A82181DF66BA5001F069B /* DictionaryTools.framework in Frameworks */,
-				078A82151DF66BA5001F069B /* ArithmeticTools.framework in Frameworks */,
-				078A82161DF66BA5001F069B /* ArrayTools.framework in Frameworks */,
-				078A82141DF66BA5001F069B /* Alamofire.framework in Frameworks */,
+				070E2A1E1DF773F4008F4845 /* ArrayTools.framework in Frameworks */,
+				070E2A1C1DF773F4008F4845 /* ArithmeticTools.framework in Frameworks */,
+				070E2A241DF773F4008F4845 /* ProgressBar.framework in Frameworks */,
+				070E2A221DF773F4008F4845 /* DictionaryTools.framework in Frameworks */,
+				070E2A201DF773F4008F4845 /* AudioKit.framework in Frameworks */,
+				070E2A261DF773F4008F4845 /* Timeline.framework in Frameworks */,
+				070E2A1A1DF773F4008F4845 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +301,7 @@
 				078A81E51DF66942001F069B /* Frameworks */,
 				078A81E61DF66942001F069B /* Resources */,
 				078A820B1DF66B3A001F069B /* ShellScript */,
+				070E2A281DF773F4008F4845 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -548,6 +576,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -569,6 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

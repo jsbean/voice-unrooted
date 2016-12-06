@@ -18,7 +18,6 @@
 		078A82181DF66BA5001F069B /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82101DF66BA5001F069B /* DictionaryTools.framework */; };
 		078A82191DF66BA5001F069B /* ProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; };
 		078A821A1DF66BA5001F069B /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; };
-		078A82211DF66C94001F069B /* ProgressMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 078A82201DF66C94001F069B /* ProgressMeterView.m */; };
 		078A82261DF66CED001F069B /* a440.caf in Resources */ = {isa = PBXBuildFile; fileRef = 078A82241DF66CED001F069B /* a440.caf */; };
 		078A82271DF66CED001F069B /* loudspeakertest.caf in Resources */ = {isa = PBXBuildFile; fileRef = 078A82251DF66CED001F069B /* loudspeakertest.caf */; };
 		078A822D1DF66DEC001F069B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A822C1DF66DEC001F069B /* Main.storyboard */; };
@@ -42,6 +41,7 @@
 		078A82611DF67255001F069B /* YAMLRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A825B1DF67255001F069B /* YAMLRegex.swift */; };
 		078A82621DF67255001F069B /* YAMLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A825C1DF67255001F069B /* YAMLResult.swift */; };
 		078A82631DF67255001F069B /* YAMLTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A825D1DF67255001F069B /* YAMLTokenizer.swift */; };
+		078A82661DF6765A001F069B /* ProgressMeterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 078A82651DF6765A001F069B /* ProgressMeterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +71,6 @@
 		078A82111DF66BA5001F069B /* ProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProgressBar.framework; path = Carthage/Build/iOS/ProgressBar.framework; sourceTree = "<group>"; };
 		078A82121DF66BA5001F069B /* Timeline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timeline.framework; path = Carthage/Build/iOS/Timeline.framework; sourceTree = "<group>"; };
 		078A821E1DF66C93001F069B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		078A821F1DF66C94001F069B /* ProgressMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressMeterView.h; sourceTree = "<group>"; };
-		078A82201DF66C94001F069B /* ProgressMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressMeterView.m; sourceTree = "<group>"; };
 		078A82241DF66CED001F069B /* a440.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = a440.caf; sourceTree = "<group>"; };
 		078A82251DF66CED001F069B /* loudspeakertest.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loudspeakertest.caf; sourceTree = "<group>"; };
 		078A822C1DF66DEC001F069B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +94,8 @@
 		078A825B1DF67255001F069B /* YAMLRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YAMLRegex.swift; path = "Voice Unrooted iOS/YamlSwift/YAMLRegex.swift"; sourceTree = "<group>"; };
 		078A825C1DF67255001F069B /* YAMLResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YAMLResult.swift; path = "Voice Unrooted iOS/YamlSwift/YAMLResult.swift"; sourceTree = "<group>"; };
 		078A825D1DF67255001F069B /* YAMLTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YAMLTokenizer.swift; path = "Voice Unrooted iOS/YamlSwift/YAMLTokenizer.swift"; sourceTree = "<group>"; };
+		078A82641DF6765A001F069B /* ProgressMeterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressMeterView.h; path = "Voice Unrooted iOS/ProgressMeterView/ProgressMeterView.h"; sourceTree = "<group>"; };
+		078A82651DF6765A001F069B /* ProgressMeterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressMeterView.m; path = "Voice Unrooted iOS/ProgressMeterView/ProgressMeterView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +185,8 @@
 		078A821D1DF66C82001F069B /* ProgressMeterView */ = {
 			isa = PBXGroup;
 			children = (
-				078A821F1DF66C94001F069B /* ProgressMeterView.h */,
-				078A82201DF66C94001F069B /* ProgressMeterView.m */,
+				078A82641DF6765A001F069B /* ProgressMeterView.h */,
+				078A82651DF6765A001F069B /* ProgressMeterView.m */,
 			);
 			name = ProgressMeterView;
 			sourceTree = "<group>";
@@ -400,7 +400,6 @@
 			files = (
 				078A82401DF66E55001F069B /* AKAudioPlayer+isDonePlaying.swift in Sources */,
 				078A82451DF66E68001F069B /* SelectEventViewController.swift in Sources */,
-				078A82211DF66C94001F069B /* ProgressMeterView.m in Sources */,
 				078A82391DF66E3B001F069B /* EventCollection+YAML.swift in Sources */,
 				078A825F1DF67255001F069B /* YAMLOperators.swift in Sources */,
 				078A82601DF67255001F069B /* YAMLParser.swift in Sources */,
@@ -416,6 +415,7 @@
 				078A82361DF66E3B001F069B /* Event.swift in Sources */,
 				078A82621DF67255001F069B /* YAMLResult.swift in Sources */,
 				078A824A1DF66E90001F069B /* DefaultValues.swift in Sources */,
+				078A82661DF6765A001F069B /* ProgressMeterView.m in Sources */,
 				078A82611DF67255001F069B /* YAMLRegex.swift in Sources */,
 				078A825E1DF67255001F069B /* Yaml.swift in Sources */,
 				078A823A1DF66E3B001F069B /* DataStore.swift in Sources */,

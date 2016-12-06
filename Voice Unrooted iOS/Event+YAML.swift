@@ -12,26 +12,15 @@ extension Event {
     
     /// Construct an `Event` value with a `Yaml` source.
     public init?(index: Int, attributes: Yaml) {
-        
-        guard let attributesDict = attributes.dictionary else { return nil }
-        
-        guard let soundFileName = attributesDict["sound_file_name"]?.string else {
-            return nil
-        }
-        
-        guard let tempo = attributesDict["tempo"]?.double else {
-            return nil
-        }
-        
-        guard let progressBarTime = attributesDict["progress_bar_time"]?.double else {
-            return nil
-        }
-        
-        guard let fadeTime = attributesDict["fade_time"]?.double else {
-            return nil
-        }
-        
-        guard let gain = attributesDict["gain"]?.double else {
+
+        guard
+            let attributesDict = attributes.dictionary,
+            let soundFileName = attributesDict["sound_file_name"]?.string,
+            let tempo = attributesDict["tempo"]?.double,
+            let progressBarTime = attributesDict["progress_bar_time"]?.double,
+            let fadeTime = attributesDict["fade_time"]?.double,
+            let gain = attributesDict["gain"]?.double
+        else {
             return nil
         }
         

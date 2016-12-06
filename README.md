@@ -1,2 +1,2 @@
-# Voice Unrooted
+# voice unrooted
 Repository for app score of `voice unrooted` for soprano and electronics by Hans Tutschku

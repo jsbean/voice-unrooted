@@ -96,11 +96,17 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DefaultValues.readUserDefaults()
+        if DefaultValues.Defaults.outputVolume == 0 {
+            print("output volume == 0")
+            DefaultValues.Defaults.outputVolume = 0.75
+            DefaultValues.writeUserDefaults()
+            DefaultValues.readUserDefaults()
+        }
         configureMIDI()
         configureProgressBar()
         configureAppearance()
         restoreInterfaceElements()
-        DefaultValues.readUserDefaults()
     }
     
     override func viewWillAppear(_ animated: Bool) {

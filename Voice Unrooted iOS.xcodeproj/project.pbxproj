@@ -13,6 +13,14 @@
 		078A81F31DF66943001F069B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F21DF66943001F069B /* Assets.xcassets */; };
 		078A81F61DF66943001F069B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F41DF66943001F069B /* LaunchScreen.storyboard */; };
 		078A82011DF66943001F069B /* Voice_Unrooted_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A82001DF66943001F069B /* Voice_Unrooted_iOSTests.swift */; };
+		078A82141DF66BA5001F069B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820C1DF66BA5001F069B /* Alamofire.framework */; };
+		078A82151DF66BA5001F069B /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820D1DF66BA5001F069B /* ArithmeticTools.framework */; };
+		078A82161DF66BA5001F069B /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820E1DF66BA5001F069B /* ArrayTools.framework */; };
+		078A82171DF66BA5001F069B /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820F1DF66BA5001F069B /* AudioKit.framework */; };
+		078A82181DF66BA5001F069B /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82101DF66BA5001F069B /* DictionaryTools.framework */; };
+		078A82191DF66BA5001F069B /* ProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; };
+		078A821A1DF66BA5001F069B /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; };
+		078A821B1DF66BA5001F069B /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82131DF66BA5001F069B /* Yaml.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,14 @@
 		078A81FC1DF66943001F069B /* Voice Unrooted iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voice Unrooted iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078A82001DF66943001F069B /* Voice_Unrooted_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice_Unrooted_iOSTests.swift; sourceTree = "<group>"; };
 		078A82021DF66943001F069B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		078A820C1DF66BA5001F069B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		078A820D1DF66BA5001F069B /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
+		078A820E1DF66BA5001F069B /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/iOS/ArrayTools.framework; sourceTree = "<group>"; };
+		078A820F1DF66BA5001F069B /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
+		078A82101DF66BA5001F069B /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/iOS/DictionaryTools.framework; sourceTree = "<group>"; };
+		078A82111DF66BA5001F069B /* ProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProgressBar.framework; path = Carthage/Build/iOS/ProgressBar.framework; sourceTree = "<group>"; };
+		078A82121DF66BA5001F069B /* Timeline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timeline.framework; path = Carthage/Build/iOS/Timeline.framework; sourceTree = "<group>"; };
+		078A82131DF66BA5001F069B /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +59,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078A82171DF66BA5001F069B /* AudioKit.framework in Frameworks */,
+				078A82191DF66BA5001F069B /* ProgressBar.framework in Frameworks */,
+				078A821A1DF66BA5001F069B /* Timeline.framework in Frameworks */,
+				078A82181DF66BA5001F069B /* DictionaryTools.framework in Frameworks */,
+				078A82151DF66BA5001F069B /* ArithmeticTools.framework in Frameworks */,
+				078A821B1DF66BA5001F069B /* Yaml.framework in Frameworks */,
+				078A82161DF66BA5001F069B /* ArrayTools.framework in Frameworks */,
+				078A82141DF66BA5001F069B /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +83,7 @@
 		078A81DF1DF66942001F069B = {
 			isa = PBXGroup;
 			children = (
+				078A821C1DF66BA8001F069B /* Frameworks */,
 				078A81EA1DF66942001F069B /* Voice Unrooted iOS */,
 				078A81FF1DF66943001F069B /* Voice Unrooted iOSTests */,
 				078A81E91DF66942001F069B /* Products */,
@@ -96,6 +121,21 @@
 			path = "Voice Unrooted iOSTests";
 			sourceTree = "<group>";
 		};
+		078A821C1DF66BA8001F069B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				078A820C1DF66BA5001F069B /* Alamofire.framework */,
+				078A820D1DF66BA5001F069B /* ArithmeticTools.framework */,
+				078A820E1DF66BA5001F069B /* ArrayTools.framework */,
+				078A820F1DF66BA5001F069B /* AudioKit.framework */,
+				078A82101DF66BA5001F069B /* DictionaryTools.framework */,
+				078A82111DF66BA5001F069B /* ProgressBar.framework */,
+				078A82121DF66BA5001F069B /* Timeline.framework */,
+				078A82131DF66BA5001F069B /* Yaml.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +146,7 @@
 				078A81E41DF66942001F069B /* Sources */,
 				078A81E51DF66942001F069B /* Frameworks */,
 				078A81E61DF66942001F069B /* Resources */,
+				078A820B1DF66B3A001F069B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -195,6 +236,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		078A820B1DF66B3A001F069B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DictionaryTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Timeline.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Audiokit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ProgressBar.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		078A81E41DF66942001F069B /* Sources */ = {
@@ -342,9 +406,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Voice Unrooted iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.Voice-Unrooted-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -356,9 +424,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Voice Unrooted iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.Voice-Unrooted-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

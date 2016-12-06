@@ -11,8 +11,6 @@ import AudioKit
 
 /**
  Adjusts the volume of an `AKAudioPlayer`.
- 
- - TODO: Add completion handler
  */
 final class Fader {
     

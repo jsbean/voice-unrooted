@@ -112,6 +112,8 @@ class MainViewController: UIViewController {
         clearDataStoreProgressLabel()
         if events.index > 0 {
             updatePreparedEventLabel(preparedEventNumber: events.current.index)
+        } else {
+            updatePreparedEventLabel(preparedEventNumber: 1)
         }
     }
     

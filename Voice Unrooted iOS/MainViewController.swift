@@ -31,6 +31,9 @@ class MainViewController: UIViewController {
     // FIXME: Update this API
     @IBOutlet weak var metronome: ProgressMeterView!
     
+    // State to accept or not the Pedal press.
+    fileprivate var isAcceptingPedalPress = true
+    
     @IBOutlet weak var touchButton: UIButton!
     @IBOutlet weak var storeParametersButton: UIButton!
     @IBOutlet weak var masterSlaveSelect: UISegmentedControl!
@@ -574,7 +577,7 @@ class MainViewController: UIViewController {
     // MARK: - Touch button control
     
     private func disableTouchButton() {
-        touchButton.isEnabled = false;
+        touchButton.isEnabled = false
         touchButton.backgroundColor = Color.light
         touchButton.setTitleColor(Color.light, for: UIControlState())
     }
@@ -584,12 +587,13 @@ class MainViewController: UIViewController {
     }
     
     private func enableTouchButton() {
-        touchButton.isEnabled = true;
+        touchButton.isEnabled = true
+        isAcceptingPedalPress = true
         restoreTouchButton()
     }
     
     private func restoreTouchButton() {
-        touchButton.isEnabled = true;
+        touchButton.isEnabled = true
         touchButton.backgroundColor = Color.light
         touchButton.setTitleColor(Color.red, for: UIControlState())
     }
@@ -642,9 +646,11 @@ extension MainViewController {
 extension MainViewController: AKMIDIListener {
     
     func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel) {
-        print("controller: \(controller): value: \(value); channel: \(channel)")
-        
-        // for now, just activate event if any button pressed
-        activateEvent()
+        if value > 64 && isAcceptingPedalPress && touchButton.isEnabled {
+            DispatchQueue.main.async {
+                self.isAcceptingPedalPress = false
+                self.activateEvent()
+            }
+        }
     }
 }

@@ -210,7 +210,6 @@ class MainViewController: UIViewController {
     
     private func manageInterfaceElements(for preparedEventIndex: Int) {
         updatePreparedEventLabel(preparedEventNumber: preparedEventIndex)
-        //enableTouchButton()
     }
     
     private func clearDataStoreProgressLabel() {
@@ -527,7 +526,6 @@ class MainViewController: UIViewController {
         manageTimeline(for: event)
         manageInterfaceElements(for: event)
         updateEventLabel(eventNumber: events.current.index)
-        //disableTouchButton()
         prepareNextCue()
     }
     

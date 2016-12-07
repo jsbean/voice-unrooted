@@ -444,13 +444,6 @@ class MainViewController: UIViewController {
         appNameLabel.text = "Voice Unrooted"
     }
     
-    /*
-     private func configureAirTurn() {
-     let airTurnDriver = AirTurnDriver(delegate: self)
-     view.addSubview(airTurnDriver)
-     }
-     */
-    
     // MARK: - Restore Interface Elements
     
     private func restoreInterfaceElements() {
@@ -561,8 +554,8 @@ class MainViewController: UIViewController {
     }
     
     private func scheduleMetronomeFlashes(at tempo: Double) {
-        timeline.addLooping(at: tempo, offset: 0, action: self.showMetronome)
-        timeline.addLooping(at: tempo, offset: 0.2, action: self.hideMetronome)
+        timeline.addLooping(at: tempo, offset: 0, action: showMetronome)
+        timeline.addLooping(at: tempo, offset: 0.2, action: hideMetronome)
     }
     
     // MARK: - Update Event Interface Elements
@@ -598,7 +591,7 @@ class MainViewController: UIViewController {
     }
     
     private func scheduleEnablingTouchButton(at duration: Double) {
-        timeline.add(at: duration, action: self.enableTouchButton)
+        timeline.add(at: duration, action: enableTouchButton)
     }
     
     private func restoreTouchButton() {

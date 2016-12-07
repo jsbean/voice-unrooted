@@ -444,13 +444,6 @@ class MainViewController: UIViewController {
         appNameLabel.text = "Voice Unrooted"
     }
     
-    /*
-     private func configureAirTurn() {
-     let airTurnDriver = AirTurnDriver(delegate: self)
-     view.addSubview(airTurnDriver)
-     }
-     */
-    
     // MARK: - Restore Interface Elements
     
     private func restoreInterfaceElements() {

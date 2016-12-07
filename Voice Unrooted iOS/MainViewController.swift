@@ -116,6 +116,8 @@ class MainViewController: UIViewController {
         resetMetronome()
         clearEventLabel()
         clearDataStoreProgressLabel()
+        
+        // TODO: wrap up in method
         if events.index > 0 {
             updatePreparedEventLabel(preparedEventNumber: events.current.index)
         } else {
@@ -524,8 +526,8 @@ class MainViewController: UIViewController {
         manageTimeline(for: event)
         manageInterfaceElements(for: event)
         updateEventLabel(eventNumber: events.current.index)
-        prepareNextCue()
         disableTouchButton()
+        prepareNextCue()
     }
     
     private func advanceToNextEvent() {

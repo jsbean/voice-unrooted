@@ -1,4 +1,4 @@
-github "audioKit/AudioKit" == 3.4.2
+github "jsbean/AudioKit" "master"
 github "dn-m/ArithmeticTools" == 0.3.19
 github "dn-m/Timeline"
 github "dn-m/ProgressBar"

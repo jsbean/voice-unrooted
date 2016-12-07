@@ -8,4 +8,4 @@ Repository for the app score of Hans Tutschku's `voice unrooted` for soprano and
 ## Installation Instructions
 - `git clone https://github.com/jsbean/voice-unrooted`
 - `cd voice-unrooted`
-- `carthage update --platform iOS # get some tea`
+- `carthage update --platform iOS --no-use-binaries # get some tea`

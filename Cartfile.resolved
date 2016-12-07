@@ -1,6 +1,6 @@
 github "Alamofire/Alamofire" "4.2.0"
 github "dn-m/ArrayTools" "v2.0.3"
-github "audioKit/AudioKit" "v3.4.3"
+github "jsbean/AudioKit" "1a9acf429419ab56b1420dcfd29af8838fab0aa2"
 github "dn-m/ProgressBar" "v0.3.1"
 github "dn-m/ArithmeticTools" "v0.3.19"
 github "dn-m/DictionaryTools" "v0.7.1"

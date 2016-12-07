@@ -98,7 +98,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         DefaultValues.readUserDefaults()
         if DefaultValues.Defaults.outputVolume == 0 {
-            print("output volume == 0")
             DefaultValues.Defaults.outputVolume = 0.75
             DefaultValues.writeUserDefaults()
             DefaultValues.readUserDefaults()
@@ -116,6 +115,8 @@ class MainViewController: UIViewController {
         resetMetronome()
         clearEventLabel()
         clearDataStoreProgressLabel()
+        
+        // FIXME: wrap up in method
         if events.index > 0 {
             updatePreparedEventLabel(preparedEventNumber: events.current.index)
         } else {
@@ -151,10 +152,12 @@ class MainViewController: UIViewController {
     
     @IBAction func nextButtonPressed(_ sender: AnyObject) {
         prepareNextCue()
+        enableTouchButton()
     }
     
     @IBAction func previousButtonPressed(_ sender: AnyObject) {
         preparePreviousCue()
+        enableTouchButton()
     }
     
     @IBAction func outputVolumeSliderChanged(_ sender: AnyObject) {
@@ -207,7 +210,6 @@ class MainViewController: UIViewController {
     
     private func manageInterfaceElements(for preparedEventIndex: Int) {
         updatePreparedEventLabel(preparedEventNumber: preparedEventIndex)
-        enableTouchButton()
     }
     
     private func clearDataStoreProgressLabel() {
@@ -525,7 +527,6 @@ class MainViewController: UIViewController {
         manageInterfaceElements(for: event)
         updateEventLabel(eventNumber: events.current.index)
         prepareNextCue()
-        disableTouchButton()
     }
     
     private func advanceToNextEvent() {
@@ -590,14 +591,14 @@ class MainViewController: UIViewController {
         touchButton.setTitleColor(Color.light, for: UIControlState())
     }
     
-    private func scheduleEnablingTouchButton(at duration: Double) {
-        timeline.add(at: duration) { self.enableTouchButton() }
-    }
-    
     private func enableTouchButton() {
         touchButton.isEnabled = true
         isAcceptingPedalPress = true
         restoreTouchButton()
+    }
+    
+    private func scheduleEnablingTouchButton(at duration: Double) {
+        timeline.add(at: duration, action: self.enableTouchButton)
     }
     
     private func restoreTouchButton() {

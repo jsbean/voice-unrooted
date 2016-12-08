@@ -16,24 +16,12 @@ final class AudioPlayerPool: AKMixer {
     
     // Returns an array of `AKAudioPlayer` objects with the given `amount`.
     private static func makeAudioPlayers(amount: Int) -> [AKSampler] {
-        return (0..<amount).map { _ in
-            makeConfiguredAudioPlayer(name: "a440", baseDir: .resources)!
-        }
+        return (0..<amount).map { _ in makeConfiguredAudioPlayer() }
     }
     
-    // Create `AKAudioPlayer` with the given file name, if possible.
-    // TODO: Remove `name`
-    // TODO: Remove `baseDir`
-    // FIXME: Currently no support for looping
-    private static func makeConfiguredAudioPlayer(
-        name: String,
-        volume: Double = 1.0,
-        loops: Bool = false,
-        baseDir: AKAudioFile.BaseDirectory = .documents
-    ) -> AKSampler?
-    {
+    // Create `AKSampler` with the given file name.
+    private static func makeConfiguredAudioPlayer() -> AKSampler {
         let sampler = AKSampler()
-        sampler.volume = volume
         return sampler
     }
     

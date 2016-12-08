@@ -22,9 +22,6 @@ public struct DataStore {
     public static func retrieveScoreFromLocalStore(name: String) throws -> Yaml {
         let path = documentDirectory.appendingPathComponent("\(name)_score.yaml")
         let yamlString = try String(contentsOf: path)
-        
-        print("YAML: \(yamlString)")
-        
         return try Yaml.load(yamlString)
     }
     

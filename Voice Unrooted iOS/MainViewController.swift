@@ -96,12 +96,15 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // FIXME: wrap up in method
         DefaultValues.readUserDefaults()
         if DefaultValues.Defaults.outputVolume == 0 {
             DefaultValues.Defaults.outputVolume = 0.75
             DefaultValues.writeUserDefaults()
             DefaultValues.readUserDefaults()
         }
+        
         configureMIDI()
         configureProgressBar()
         configureAppearance()
@@ -554,8 +557,8 @@ class MainViewController: UIViewController {
     }
     
     private func scheduleMetronomeFlashes(at tempo: Double) {
-        timeline.addLooping(at: tempo, offset: 0, action: showMetronome)
-        timeline.addLooping(at: tempo, offset: 0.2, action: hideMetronome)
+        timeline.addLooping(at: tempo, offset: 0, body: self.showMetronome)
+        timeline.addLooping(at: tempo, offset: 0.2, body: self.hideMetronome)
     }
     
     // MARK: - Update Event Interface Elements
@@ -591,7 +594,7 @@ class MainViewController: UIViewController {
     }
     
     private func scheduleEnablingTouchButton(at duration: Double) {
-        timeline.add(at: duration, action: enableTouchButton)
+        timeline.add(at: duration, body: enableTouchButton)
     }
     
     private func restoreTouchButton() {

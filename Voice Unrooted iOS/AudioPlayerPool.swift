@@ -19,7 +19,7 @@ final class AudioPlayerPool: AKMixer {
         return (0..<amount).map { _ in makeConfiguredAudioPlayer() }
     }
     
-    // Create `AKSampler` with the given file name, if possible.
+    // Create `AKSampler` with the given file name.
     private static func makeConfiguredAudioPlayer() -> AKSampler {
         let sampler = AKSampler()
         return sampler

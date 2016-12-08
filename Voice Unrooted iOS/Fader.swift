@@ -25,7 +25,7 @@ final class Fader {
     
     public init(
         audioPlayer: AKSampler,
-        timeGrain: Seconds = 1/20,
+        timeGrain: Seconds = 1/30,
         completion: (() -> ())? = nil
     )
     {
@@ -49,7 +49,7 @@ final class Fader {
     }
     
     public func engageTimer(withVolumeGrain volumeGrain: Double) {
-        timer = Timer.scheduledTimer(timeInterval: 1/20,
+        timer = Timer.scheduledTimer(timeInterval: timeGrain,
             target: self,
             selector: #selector(adjustVolume),
             userInfo: volumeGrain,

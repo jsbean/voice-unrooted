@@ -13,6 +13,9 @@ import AudioKit
 public struct DataStore {
     
     // TODO: Implement DataRetrievalError
+    public enum DataRetrievalError: Error {
+        case noNetwork(String)
+    }
     
     private static var documentDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -40,8 +43,21 @@ public struct DataStore {
         // Tell Alamofire to download score to `documentDirectory`.
         let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
         
+        var hasNetworkError: Bool = false
+        
         // Download score with configuration, performing `completion` upon success.
-        Alamofire.download(sourceURL, to: destination).response { _ in completion() }
+        Alamofire.download(sourceURL, to: destination).response { response in
+            
+            guard response.error == nil else {
+                hasNetworkError = true
+                return
+            }
+            completion()
+        }
+        
+        if hasNetworkError {
+            throw DataRetrievalError.noNetwork("No network found!")
+        }
     }
     
     /// Returns the names for audio files that do not exist on the machine

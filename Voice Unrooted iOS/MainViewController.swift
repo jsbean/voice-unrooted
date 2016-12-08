@@ -95,19 +95,13 @@ class MainViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
-    // MARK: - UIViewController
+    // MARK: - UIViewController Initialization
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         
-        // FIXME: wrap up in method
-        DefaultValues.readUserDefaults()
-        if DefaultValues.Defaults.outputVolume == 0 {
-            DefaultValues.Defaults.outputVolume = 0.75
-            DefaultValues.writeUserDefaults()
-            DefaultValues.readUserDefaults()
-        }
-        
+        ensureOutputVolumeNotZero()
         configureMIDI()
         configureProgressBar()
         configureAppearance()
@@ -115,14 +109,34 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
+
         ensureNavigationBarHidden()
         updateOutputVolumeSlider()
         resetMetronome()
         clearEventLabel()
         clearDataStoreProgressLabel()
+        preparePreparedEventLabel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
-        // FIXME: wrap up in method
+        super.viewDidAppear(animated)
+        
+        manageScoreAndAudioFiles()
+    }
+    
+    private func ensureOutputVolumeNotZero() {
+        DefaultValues.readUserDefaults()
+        if DefaultValues.Defaults.outputVolume == 0 {
+            DefaultValues.Defaults.outputVolume = 0.75
+            DefaultValues.writeUserDefaults()
+            DefaultValues.readUserDefaults()
+        }
+    }
+    
+    private func preparePreparedEventLabel() {
         if events.index > 0 {
             updatePreparedEventLabel(preparedEventNumber: events.current.index)
         } else {
@@ -130,12 +144,8 @@ class MainViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        manageScoreAndAudioFiles()
-    }
+    // - MARK: MIDI Configuration
     
-    // MIDI
     private func configureMIDI() {
         let midiIn = AKMIDI()
         midiIn.openInput()
@@ -155,6 +165,7 @@ class MainViewController: UIViewController {
     
     @IBAction func touchButtonPressed(_ sender: AnyObject) {
         activateEvent()
+        clearDataStoreProgressLabel()
     }
     
     @IBAction func nextButtonPressed(_ sender: AnyObject) {
@@ -228,14 +239,19 @@ class MainViewController: UIViewController {
     }
     
     private func clearDataStoreProgressLabel() {
-        self.dataStoreProgressLabel.text = ""
+        dataStoreProgressLabel.text = ""
     }
     
+    // MARK: - Score and Audio File Management
+    
     private func manageScoreAndAudioFiles() {
+        
         guard !appDelegate.scoreIsPresent else {
             prepareToStartIfScoreIsPresent()
             return
         }
+        
+        disableInterfaceElements()
         updateDataStoreProgressLabel("Retrieving score")
         retrieveScore()
     }
@@ -244,12 +260,12 @@ class MainViewController: UIViewController {
         manageAudioFiles()
     }
     
+    // FIXME: This is not modelled well!
     private func manageAudioFiles() {
         
         guard !appDelegate.allAudioFilesArePresent else {
             updateDataStoreProgressLabel("Audio files are ready")
             prepareToPlayFirstAudioFile()
-            enableTouchButton()
             return
         }
         
@@ -257,13 +273,17 @@ class MainViewController: UIViewController {
         if !audioFilesNeedingDownload.isEmpty {
             presentAudioFilesDownloadAlert(names: audioFilesNeedingDownload)
         } else {
-            enableTouchButton()
             prepareToPlayFirstAudioFile()
         }
     }
     
     // FIXME: Rename to currentAudioFile, perhaps reuse other method
     private func prepareToPlayFirstAudioFile() {
+        
+        DispatchQueue.main.async {
+            self.restoreInterfaceElements()
+        }
+        
         appDelegate.audioPlayerPool.load(
             name: events.current.soundFileName,
             volume: events.current.gain
@@ -273,16 +293,13 @@ class MainViewController: UIViewController {
     private func retrieveScore() {
         do {
             clearDataStoreProgressLabel()
-            disableTouchButton()
             let yamlScore = try DataStore.retrieveScoreFromLocalStore(name: "voice_unrooted")
             appDelegate.scoreIsPresent = true
-            enableTouchButton()
             try events.populate(with: yamlScore)
             manageAudioFiles()
             
         } catch {
             presentScoreDownloadAlert()
-            enableTouchButton()
         }
     }
     
@@ -294,8 +311,9 @@ class MainViewController: UIViewController {
             title: "There are audio files that still need to be downloaded",
             message: "Download remaining audio files?",
             sourceView: self.view
-            )
+        )
         {
+            self.disableInterfaceElements()
             self.downloadAudioFiles(names: names)
         }
         
@@ -319,7 +337,9 @@ class MainViewController: UIViewController {
             }
             
         } catch {
-            updateDataStoreProgressLabel("Could not download audio files!")
+            DispatchQueue.main.async {
+                self.updateDataStoreProgressLabel("Unable to download audio files!")
+            }
         }
     }
     
@@ -349,7 +369,10 @@ class MainViewController: UIViewController {
                 self.manageAudioFiles()
             }
         } catch {
-            // TODO: Error message on .main thread
+
+            DispatchQueue.main.async {
+                self.updateDataStoreProgressLabel("Unable to download score")
+            }
         }
     }
     
@@ -369,13 +392,11 @@ class MainViewController: UIViewController {
     }
     
     private func updateUIBeforeScoreProcessing() {
-        disableTouchButton()
         updateDataStoreProgressLabel("Processing score")
     }
     
     private func restoreUIAfterScoreProcessing() {
         clearDataStoreProgressLabel()
-        enableTouchButton()
     }
     
     private func updateDataStoreProgressLabel(
@@ -442,6 +463,9 @@ class MainViewController: UIViewController {
     
     // TODO: use slightly more explicit naming here (configureVisualAttributes() or sim.)
     private func configureAppearance() {
+        
+        print("configure appearance")
+        
         view.backgroundColor = Color.light
         viewGroupCounters.backgroundColor = Color.dark
         viewGroupExpert.backgroundColor = Color.dark
@@ -455,7 +479,7 @@ class MainViewController: UIViewController {
     
     private func configureAppNameAndVersionLabels() {
         let version = Bundle.main.infoDictionary!["CFBundleVersion"]!
-        appVersionLabel.text = "\(version)"
+        appVersionLabel.text = "Version: \(version)"
         appNameLabel.text = "Voice Unrooted"
     }
     
@@ -475,13 +499,13 @@ class MainViewController: UIViewController {
     }
     
     private func restorePreviousButton() {
-        previousButton.isEnabled = true;
+        previousButton.isEnabled = true
         previousButton.backgroundColor = Color.light
         previousButton.setTitleColor(Color.white, for: UIControlState())
     }
     
     private func restoreStopButton() {
-        stopButton.isEnabled = true;
+        stopButton.isEnabled = true
         stopButton.backgroundColor = Color.red
         stopButton.setTitleColor(Color.white, for: UIControlState())
     }
@@ -490,7 +514,7 @@ class MainViewController: UIViewController {
     
     private func regenerateTimeline() {
         timeline.stop()
-        timeline = Timeline(rate: 1/120)
+        timeline = Timeline(rate: 1/30)
     }
     
     private func stopTimers() {
@@ -602,12 +626,29 @@ class MainViewController: UIViewController {
         eventNumberLabel.text = ""
     }
     
+    private func disableInterfaceElements() {
+        DispatchQueue.main.async {
+            self.disableTouchButton()
+            self.disableStopButton()
+            self.disablePreviousButton()
+            self.disableNextButton()
+        }
+    }
+    
+    private func disableStopButton() {
+        stopButton.isEnabled = false
+        stopButton.setTitleColor(Color.lightRed, for: UIControlState())
+    }
+    
     private func disableNextButton() {
         nextButton.isEnabled = false
         nextButton.setTitleColor(Color.light, for: UIControlState())
     }
     
-    // MARK: - Touch button control
+    private func disablePreviousButton() {
+        previousButton.isEnabled = false
+        previousButton.setTitleColor(Color.light, for: UIControlState())
+    }
     
     private func disableTouchButton() {
         touchButton.isEnabled = false
@@ -629,6 +670,7 @@ class MainViewController: UIViewController {
         touchButton.isEnabled = true
         touchButton.backgroundColor = Color.light
         touchButton.setTitleColor(Color.red, for: UIControlState())
+        isAcceptingPedalPress = true
     }
     
     // MARK: - Metronome control

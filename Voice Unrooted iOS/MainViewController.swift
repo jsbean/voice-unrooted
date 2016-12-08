@@ -160,6 +160,14 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
+        
+        if events.current.index == events.count {
+            disableNextButton()
+            disableTouchButton()
+        } else {
+            restoreNextButton()
+        }
+        
         stopEverything()
     }
     
@@ -200,6 +208,15 @@ class MainViewController: UIViewController {
     // MARK: - Cue Navigation
     
     public func preparePreviousCue() {
+        
+        // FIXME: Wrap up
+        if events.current.index == events.count - 1 {
+            disableNextButton()
+            disableTouchButton()
+        } else {
+            restoreNextButton()
+        }
+        
         do {
             try events.preparePrevious()
             prepareCueOnDeck()
@@ -210,7 +227,8 @@ class MainViewController: UIViewController {
     
     public func prepareNextCue() {
         
-        if events.current.index == events.count - 1 {
+        // FIXME: Wrap up
+        if events.current.index == events.count {
             disableNextButton()
             disableTouchButton()
         } else {

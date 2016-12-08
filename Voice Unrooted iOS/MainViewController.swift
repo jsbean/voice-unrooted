@@ -651,10 +651,24 @@ extension MainViewController {
 extension MainViewController: AKMIDIListener {
     
     func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel) {
-        if value > 64 && isAcceptingPedalPress && touchButton.isEnabled {
-            DispatchQueue.main.async {
-                self.isAcceptingPedalPress = false
-                self.activateEvent()
+        
+        guard isAcceptingPedalPress && touchButton.isEnabled else { return }
+        
+        if DefaultValues.Defaults.pedalPolarity {
+        
+            if value > 64 {
+                DispatchQueue.main.async {
+                    self.isAcceptingPedalPress = false
+                    self.activateEvent()
+                }
+            }
+        } else {
+            
+            if value <= 64 {
+                DispatchQueue.main.async {
+                    self.isAcceptingPedalPress = false
+                    self.activateEvent()
+                }
             }
         }
     }

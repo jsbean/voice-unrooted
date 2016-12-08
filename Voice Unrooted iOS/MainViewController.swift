@@ -624,11 +624,11 @@ class MainViewController: UIViewController {
         UIDevice.current.setValue(value, forKey: "orientation")
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return true
     }
     
-    override var prefersStatusBarHidden : Bool {
+    override var prefersStatusBarHidden: Bool {
         return true
     }
 }
@@ -650,6 +650,13 @@ extension MainViewController {
 
 extension MainViewController: AKMIDIListener {
     
+    func midiPedalPressed() {
+        DispatchQueue.main.async {
+            self.isAcceptingPedalPress = false
+            self.activateEvent()
+        }
+    }
+    
     func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel) {
         
         guard isAcceptingPedalPress && touchButton.isEnabled else { return }
@@ -657,18 +664,12 @@ extension MainViewController: AKMIDIListener {
         if DefaultValues.Defaults.pedalPolarity {
         
             if value > 64 {
-                DispatchQueue.main.async {
-                    self.isAcceptingPedalPress = false
-                    self.activateEvent()
-                }
+                midiPedalPressed()
             }
         } else {
             
             if value <= 64 {
-                DispatchQueue.main.async {
-                    self.isAcceptingPedalPress = false
-                    self.activateEvent()
-                }
+                midiPedalPressed()
             }
         }
     }

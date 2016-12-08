@@ -22,7 +22,8 @@ final class AudioPlayerPool: AKMixer {
     }
     
     // Create `AKAudioPlayer` with the given file name, if possible.
-    // TODO: Remove name
+    // TODO: Remove `name`
+    // TODO: Remove `baseDir`
     // FIXME: Currently no support for looping
     private static func makeConfiguredAudioPlayer(
         name: String,

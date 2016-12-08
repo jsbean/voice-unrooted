@@ -373,7 +373,7 @@ class MainViewController: UIViewController {
     private func updateDataStoreProgressLabel(
         amount audioFilesDownloaded: Int,
         of total: Int
-        )
+    )
     {
         updateDataStoreProgressLabel(
             "Downloading \(audioFilesDownloaded)/\(total) audio files"
@@ -556,7 +556,12 @@ class MainViewController: UIViewController {
     
     private func manageInterfaceElements(for event: Event) {
         engageProgressBar(for: event.progressBarTime)
-        scheduleEnablingTouchButton(at: event.progressBarTime - 2)
+        
+        // If last event, don't reenable touch button
+        if event.index < events.count {
+            scheduleEnablingTouchButton(at: event.progressBarTime - 2)
+        }
+        
         disableTouchButton()
     }
     
@@ -662,9 +667,7 @@ extension MainViewController: AKMIDIListener {
     }
     
     func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel) {
-        
-        print("midi in")
-        
+
         guard isAcceptingPedalPress && touchButton.isEnabled else { return }
         
         if pedalPolarity {

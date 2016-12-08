@@ -34,6 +34,9 @@ class MainViewController: UIViewController {
     // State to accept or not the Pedal press.
     fileprivate var isAcceptingPedalPress = true
     
+    // Whether MIDI pedal is up or down
+    fileprivate var pedalPolarity = true
+    
     @IBOutlet weak var touchButton: UIButton!
     @IBOutlet weak var storeParametersButton: UIButton!
     @IBOutlet weak var masterSlaveSelect: UISegmentedControl!
@@ -137,6 +140,7 @@ class MainViewController: UIViewController {
         let midiIn = AKMIDI()
         midiIn.openInput()
         midiIn.addListener(self)
+        pedalPolarity = DefaultValues.Defaults.pedalPolarity
     }
     
     // MARK: - UI Methods
@@ -659,13 +663,16 @@ extension MainViewController: AKMIDIListener {
     
     func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel) {
         
+        print("midi in")
+        
         guard isAcceptingPedalPress && touchButton.isEnabled else { return }
         
-        if DefaultValues.Defaults.pedalPolarity {
+        if pedalPolarity {
         
             if value > 64 {
                 midiPedalPressed()
             }
+            
         } else {
             
             if value <= 64 {

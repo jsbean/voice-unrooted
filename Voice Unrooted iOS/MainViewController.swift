@@ -198,6 +198,14 @@ class MainViewController: UIViewController {
     }
     
     public func prepareNextCue() {
+        
+        if events.current.index == events.count - 1 {
+            disableNextButton()
+            disableTouchButton()
+        } else {
+            restoreNextButton()
+        }
+        
         do {
             try events.prepareNext()
             prepareCueOnDeck()
@@ -500,6 +508,11 @@ class MainViewController: UIViewController {
     }
     
     private func stopEverything() {
+        
+        if events.current.index == events.count {
+            disableNextButton()
+        }
+        
         enableTouchButton()
         stopTimers()
         stopProgressBar()
@@ -556,18 +569,19 @@ class MainViewController: UIViewController {
     
     private func manageInterfaceElements(for event: Event) {
         engageProgressBar(for: event.progressBarTime)
+        disableTouchButton()
         
         // If last event, don't reenable touch button
         if event.index < events.count {
             scheduleEnablingTouchButton(at: event.progressBarTime - 2)
+        } else {
+            disableNextButton()
         }
-        
-        disableTouchButton()
     }
     
     private func scheduleMetronomeFlashes(at tempo: Double) {
-        timeline.addLooping(at: tempo, offset: 0, body: self.showMetronome)
-        timeline.addLooping(at: tempo, offset: 0.2, body: self.hideMetronome)
+        timeline.addLooping(at: tempo, offset: 0, body: showMetronome)
+        timeline.addLooping(at: tempo, offset: 0.2, body: hideMetronome)
     }
     
     // MARK: - Update Event Interface Elements
@@ -586,6 +600,11 @@ class MainViewController: UIViewController {
     
     private func clearEventLabel() {
         eventNumberLabel.text = ""
+    }
+    
+    private func disableNextButton() {
+        nextButton.isEnabled = false
+        nextButton.setTitleColor(Color.light, for: UIControlState())
     }
     
     // MARK: - Touch button control

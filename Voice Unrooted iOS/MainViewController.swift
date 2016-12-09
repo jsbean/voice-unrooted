@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
     // MARK: - Timing
     
     // Scheduler that fires events off at the right time
-    private var timeline = Timeline(rate: 1/20)
+    private var timeline = Timeline(rate: 1/120)
     
     // Bar that indicates progression through current event.
     private var progressBar: ProgressBar!
@@ -540,10 +540,11 @@ class MainViewController: UIViewController {
     }
     
     private func manageTimeline(for event: Event) {
+        
         regenerateTimeline()
         
         if DefaultValues.Defaults.metronomeIsActive {
-            scheduleMetronomeFlashes(at: event.tempo)
+            scheduleMetronomeFlashes(at: event.tempo, for: event.progressBarTime)
         }
         
         timeline.start()
@@ -621,9 +622,18 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func scheduleMetronomeFlashes(at tempo: Double) {
-        timeline.addLooping(at: tempo, offset: 0, body: showMetronome)
-        timeline.addLooping(at: tempo, offset: 0.2, body: hideMetronome)
+    private func scheduleMetronomeFlashes(at tempo: Tempo, for duration: Seconds) {
+        let interval = 60 / tempo
+        let amountBeats = Int(duration / interval)
+        (0...amountBeats)
+            .lazy
+            .map { $0 * interval }
+            .forEach(scheduleMetronomeFlash)
+    }
+    
+    private func scheduleMetronomeFlash(at offset: Seconds) {
+        timeline.add(at: offset, body: showMetronome)
+        timeline.add(at: offset + 0.2, body: hideMetronome)
     }
     
     // MARK: - Update Event Interface Elements

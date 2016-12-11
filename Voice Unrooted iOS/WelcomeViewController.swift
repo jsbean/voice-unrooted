@@ -16,24 +16,22 @@ class WelcomeViewController: UIViewController {
     // The events to be populated.
     private let events = EventCollection()
 
-    @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var dataStoreProgressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideStartButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        manageScoreAndAudioFiles()
+        retrieveResources()
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
-        presentMainViewController()
+        proceedToPerformanceViewController()
     }
     
-    private func presentMainViewController() {
+    private func proceedToPerformanceViewController() {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -46,45 +44,33 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Score and Audio File Management
     
-    private func manageScoreAndAudioFiles() {
-        
-        guard !appDelegate.scoreIsPresent else {
-            showStartButton()
-            return
-        }
-        
-        updateDataStoreProgressLabel("Retrieving score")
+    private func retrieveResources() {
         retrieveScore()
-    }
-    
-    // FIXME: This is not modelled well!
-    // FIXME: This can be cleaned up now that `MainViewController` should never be opened
-    // without having initialized score and audio
-    private func manageAudioFiles() {
-        
-        guard !appDelegate.allAudioFilesArePresent else {
-            updateDataStoreProgressLabel("Audio files are ready")
-            showStartButton()
-            return
-        }
-        
-        let audioFilesNeedingDownload = audioFilesUnavailableLocally
-        if !audioFilesNeedingDownload.isEmpty {
-            presentAudioFilesDownloadAlert(names: audioFilesNeedingDownload)
-        } else {
-            showStartButton()
-        }
+        retrieveAudioFiles()
+        proceedToPerformanceViewController()
     }
     
     private func retrieveScore() {
+        
+        updateDataStoreProgressLabel("Retrieving score...")
+        
         do {
-            clearDataStoreProgressLabel()
             let yamlScore = try DataStore.retrieveScoreFromLocalStore(name: "voice_unrooted")
-            appDelegate.scoreIsPresent = true
             try events.populate(with: yamlScore)
-            manageAudioFiles()
+            
         } catch {
             presentScoreDownloadAlert()
+        }
+    }
+    
+    private func retrieveAudioFiles() {
+        
+        // If all audio files are prepared, continue!
+        if audioFilesUnavailableLocally.isEmpty {
+            updateDataStoreProgressLabel("Audio files are ready")
+            proceedToPerformanceViewController()
+        } else {
+            presentAudioFilesDownloadAlert(names: audioFilesUnavailableLocally)
         }
     }
     
@@ -96,38 +82,46 @@ class WelcomeViewController: UIViewController {
             title: "There are audio files that still need to be downloaded",
             message: "Download remaining audio files?",
             sourceView: self.view
-            )
+        )
         {
-            //self.disableInterfaceElements()
             self.downloadAudioFiles(names: names)
         }
         
         present(alert, animated: false)
     }
     
-    // FIXME: see: http://stackoverflow.com/questions/32642782/waiting-for-multiple-asynchronous-download-tasks
-    // FIXME: see: http://commandshift.co.uk/blog/2014/03/19/using-dispatch-groups-to-wait-for-multiple-web-services/
     private func downloadAudioFiles(names: [String]) {
-        do {
-            var i = 1
+        
+        // Dispatch group to which each async task belongs
+        let group = DispatchGroup()
+        
+        // Amount of audio files downloaded thus far
+        var amountDownloaded = 1
+        
+        // Iterate over all names needing to be downloaded
+        for name in names {
             
-            try DataStore.retrieveAudioFilesFromNetwork(audioFileNames: names) {
-                
-                self.updateDataStoreProgressLabel(amount: i, of: names.count)
-                
-                //
-                if i == names.count {
-                    self.updateDataStoreProgressLabelUponCompletion()
-                    self.hideStartButton()
-                }
-                
-                i += 1
-            }
+            // Enter the dispatch group
+            group.enter()
             
-        } catch {
-            DispatchQueue.main.async {
-                self.updateDataStoreProgressLabel("Unable to download audio files!")
+            // Retrieve a single audio file
+            DataStore.retrieveAudioFileFromNetwork(name: name) {
+                
+                // Let the world know!
+                self.updateDataStoreProgressLabel(amount: amountDownloaded, of: names.count)
+                
+                // Increment counter
+                amountDownloaded += 1
+                
+                // Leave the dispatch group
+                group.leave()
             }
+        }
+        
+        // After all audio files have been downloaded, proceed to performance interface
+        group.notify(queue: .main) {
+            self.updateDataStoreProgressLabelUponCompletion()
+            self.proceedToPerformanceViewController()
         }
     }
     
@@ -154,7 +148,7 @@ class WelcomeViewController: UIViewController {
                 // Upon successful retrieval of score from network, do:
                 self.processScoreFromLocalStore()
                 self.restoreUIAfterScoreProcessing()
-                self.manageAudioFiles()
+                self.retrieveAudioFiles()
             }
         } catch {
             
@@ -187,18 +181,12 @@ class WelcomeViewController: UIViewController {
         clearDataStoreProgressLabel()
     }
     
-    private func updateDataStoreProgressLabel(
-        amount audioFilesDownloaded: Int,
-        of total: Int
-    )
-    {
-        updateDataStoreProgressLabel(
-            "Downloading \(audioFilesDownloaded)/\(total) audio files"
-        )
+    private func updateDataStoreProgressLabel(amount: Int, of total: Int) {
+        updateDataStoreProgressLabel("Downloading \(amount)/\(total) audio files")
     }
     
     private func updateDataStoreProgressLabelUponCompletion() {
-        updateDataStoreProgressLabel("Audio files ready")
+        updateDataStoreProgressLabel("Ready!")
     }
     
     private var audioFilesUnavailableLocally: [String] {
@@ -212,13 +200,5 @@ class WelcomeViewController: UIViewController {
     
     private func clearDataStoreProgressLabel() {
         dataStoreProgressLabel.text = ""
-    }
-    
-    private func showStartButton() {
-        startButton.isHidden = false
-    }
-    
-    private func hideStartButton() {
-        startButton.isHidden = true
     }
 }

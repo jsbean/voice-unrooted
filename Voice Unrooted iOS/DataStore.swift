@@ -52,6 +52,7 @@ public struct DataStore {
                 hasNetworkError = true
                 return
             }
+            
             completion()
         }
         
@@ -78,6 +79,16 @@ public struct DataStore {
         progress: @escaping () -> ()
     ) throws
     {
+        audioFileNames.forEach { name in
+            retrieveAudioFileFromNetwork(name: name, completion: progress)
+        }
+    }
+    
+    internal static func retrieveAudioFileFromNetwork(
+        name: String,
+        completion: @escaping () -> ()
+    )
+    {
         // The location from which we will download the audio files
         let hansURL = "http://tutschku.com/iPhone-events/voice_unrooted/sound_files"
         
@@ -86,10 +97,7 @@ public struct DataStore {
             for: .documentDirectory
         )
         
-        // Download score with configuration, performing `progress` upon success of each.
-        audioFileNames.forEach { name in
-            let sourceURL = "\(hansURL)/\(name).caf"
-            Alamofire.download(sourceURL, to: destination).response { _ in progress() }
-        }
+        let sourceURL = "\(hansURL)/\(name).caf"
+        Alamofire.download(sourceURL, to: destination).response { _ in completion() }
     }
 }

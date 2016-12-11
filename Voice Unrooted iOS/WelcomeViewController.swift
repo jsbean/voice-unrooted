@@ -16,21 +16,30 @@ class WelcomeViewController: UIViewController {
     // The events to be executed.
     private let events = EventCollection()
 
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var dataStoreProgressLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        hideStartButton()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         manageScoreAndAudioFiles()
     }
     
+    @IBAction func startButtonPressed(_ sender: Any) {
+        print("start button pressed")
+    }
     // MARK: - Score and Audio File Management
     
-    // TODO: Move to `WelcomeViewController`.
     private func manageScoreAndAudioFiles() {
         
         print("manage score and audio files")
         
         guard !appDelegate.scoreIsPresent else {
-            prepareToStartIfScoreIsPresent()
+            showStartButton()
             return
         }
         
@@ -39,18 +48,14 @@ class WelcomeViewController: UIViewController {
         retrieveScore()
     }
     
-    // TODO: Move to `WelcomeViewController`.
-    private func prepareToStartIfScoreIsPresent() {
-        manageAudioFiles()
-    }
-    
-    // TODO: Move to `WelcomeViewController`.
     // FIXME: This is not modelled well!
+    // FIXME: This can be cleaned up now that `MainViewController` should never be opened
+    // without having initialized score and audio
     private func manageAudioFiles() {
         
         guard !appDelegate.allAudioFilesArePresent else {
             updateDataStoreProgressLabel("Audio files are ready")
-            //prepareToPlayFirstAudioFile()
+            self.startButton.isHidden = false
             return
         }
         
@@ -58,29 +63,13 @@ class WelcomeViewController: UIViewController {
         if !audioFilesNeedingDownload.isEmpty {
             presentAudioFilesDownloadAlert(names: audioFilesNeedingDownload)
         } else {
-            //prepareToPlayFirstAudioFile()
+            self.startButton.isHidden = false
         }
     }
     
-    /*
-    // FIXME: Rename to currentAudioFile, perhaps reuse other method
-    private func prepareToPlayFirstAudioFile() {
-        
-        DispatchQueue.main.async {
-            self.restoreInterfaceElements()
-        }
-        
-        appDelegate.audioPlayerPool.load(
-            name: events.current.soundFileName,
-            volume: events.current.gain
-        )
-    }
-    */
-    
-    // TODO: Move to `WelcomeViewController`.
     private func retrieveScore() {
         do {
-            //clearDataStoreProgressLabel()
+            clearDataStoreProgressLabel()
             let yamlScore = try DataStore.retrieveScoreFromLocalStore(name: "voice_unrooted")
             appDelegate.scoreIsPresent = true
             try events.populate(with: yamlScore)
@@ -91,7 +80,6 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func presentAudioFilesDownloadAlert(names: [String]) {
         
         if names.isEmpty { return }
@@ -109,7 +97,8 @@ class WelcomeViewController: UIViewController {
         present(alert, animated: false)
     }
     
-    // TODO: Move to `WelcomeViewController`.
+    // FIXME: see: http://stackoverflow.com/questions/32642782/waiting-for-multiple-asynchronous-download-tasks
+    // FIXME: see: http://commandshift.co.uk/blog/2014/03/19/using-dispatch-groups-to-wait-for-multiple-web-services/
     private func downloadAudioFiles(names: [String]) {
         do {
             var i = 1
@@ -118,8 +107,10 @@ class WelcomeViewController: UIViewController {
                 
                 self.updateDataStoreProgressLabel(amount: i, of: names.count)
                 
+                //
                 if i == names.count {
                     self.updateDataStoreProgressLabelUponCompletion()
+                    self.startButton.isHidden = false
                     //self.prepareToPlayFirstAudioFile()
                 }
                 
@@ -133,7 +124,6 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func presentScoreDownloadAlert() {
         
         // Create an alert that prompts the user to download the score
@@ -147,7 +137,6 @@ class WelcomeViewController: UIViewController {
         present(alert, animated: false)
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func downloadScore() {
         
         updateUIBeforeScoreRetrieval()
@@ -168,7 +157,6 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func processScoreFromLocalStore() {
         
         do {
@@ -180,46 +168,50 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func updateUIBeforeScoreRetrieval() {
         updateDataStoreProgressLabel("Retrieving score from network")
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func updateUIBeforeScoreProcessing() {
         updateDataStoreProgressLabel("Processing score")
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func restoreUIAfterScoreProcessing() {
-        //clearDataStoreProgressLabel()
+        clearDataStoreProgressLabel()
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func updateDataStoreProgressLabel(
         amount audioFilesDownloaded: Int,
         of total: Int
-        )
+    )
     {
         updateDataStoreProgressLabel(
             "Downloading \(audioFilesDownloaded)/\(total) audio files"
         )
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func updateDataStoreProgressLabelUponCompletion() {
         updateDataStoreProgressLabel("Audio files ready")
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private var audioFilesUnavailableLocally: [String] {
         let names = events.map { $0.soundFileName }
         return DataStore.audioFilesUnavailableLocally(from: names)
     }
     
-    // TODO: Move to `WelcomeViewController`.
     private func updateDataStoreProgressLabel(_ text: String) {
-        //dataStoreProgressLabel.text = text
+        dataStoreProgressLabel.text = text
+    }
+    
+    private func clearDataStoreProgressLabel() {
+        dataStoreProgressLabel.text = ""
+    }
+    
+    private func showStartButton() {
+        startButton.isHidden = false
+    }
+    
+    private func hideStartButton() {
+        startButton.isHidden = true
     }
 }
-

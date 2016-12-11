@@ -725,13 +725,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJi-cx-Zjr">
+                                <rect key="frame" x="254" y="531" width="261" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="261" id="rrn-LO-AJY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lA0-vs-Kf0">
+                                <rect key="frame" x="367" y="797" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="9w7-Ts-tZh" eventType="touchUpInside" id="PYN-IS-9zj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="deG-vH-b8j" firstAttribute="centerX" secondItem="F1T-9H-GNG" secondAttribute="centerX" id="2lI-Oj-LKr"/>
-                            <constraint firstItem="deG-vH-b8j" firstAttribute="centerY" secondItem="F1T-9H-GNG" secondAttribute="centerY" id="BEf-dQ-7VE"/>
+                            <constraint firstItem="oJi-cx-Zjr" firstAttribute="top" secondItem="deG-vH-b8j" secondAttribute="bottom" constant="8" symbolic="YES" id="TSn-bC-Mt2"/>
+                            <constraint firstItem="lA0-vs-Kf0" firstAttribute="centerX" secondItem="oJi-cx-Zjr" secondAttribute="centerX" id="Ucy-vJ-AlQ"/>
+                            <constraint firstItem="oJi-cx-Zjr" firstAttribute="centerX" secondItem="deG-vH-b8j" secondAttribute="centerX" id="ciQ-pL-EZI"/>
+                            <constraint firstItem="deG-vH-b8j" firstAttribute="centerX" secondItem="F1T-9H-GNG" secondAttribute="centerX" id="eSS-E3-oQg"/>
+                            <constraint firstItem="sDw-Mk-XSd" firstAttribute="top" secondItem="lA0-vs-Kf0" secondAttribute="bottom" constant="197" id="jjm-lN-47n"/>
+                            <constraint firstItem="deG-vH-b8j" firstAttribute="centerY" secondItem="F1T-9H-GNG" secondAttribute="centerY" id="ret-4i-1lL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dataStoreProgressLabel" destination="oJi-cx-Zjr" id="f1s-9A-L6P"/>
+                        <outlet property="startButton" destination="lA0-vs-Kf0" id="8iE-Bq-m9H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdv-ax-UDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

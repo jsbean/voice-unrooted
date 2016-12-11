@@ -15,8 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var audioPlayerPool: AudioPlayerPool!
     
-    var allAudioFilesArePresent: Bool = false
-    var scoreIsPresent: Bool = false
     
     func application(
         _ application: UIApplication,

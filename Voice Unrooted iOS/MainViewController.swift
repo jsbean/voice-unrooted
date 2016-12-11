@@ -54,7 +54,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var preparedEventNumberLabel: UILabel!
     @IBOutlet weak var outputVolumeSlider: UISlider!
     @IBOutlet weak var outputVolumeSliderLabel: UILabel!
-    @IBOutlet weak var dataStoreProgressLabel: UILabel!
     
     public override var canBecomeFirstResponder: Bool {
         return true
@@ -98,9 +97,7 @@ class MainViewController: UIViewController {
     // MARK: - UIViewController Initialization
     
     override func viewDidLoad() {
-       
         super.viewDidLoad()
-        
         ensureOutputVolumeNotZero()
         configureMIDI()
         configureProgressBar()
@@ -109,24 +106,19 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
-
         ensureNavigationBarHidden()
         updateOutputVolumeSlider()
         resetMetronome()
         clearEventLabel()
-        clearDataStoreProgressLabel()
         preparePreparedEventLabel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         super.viewDidAppear(animated)
-        
-        manageScoreAndAudioFiles()
+        prepareToPlayFirstAudioFile()
     }
-    
+
     private func ensureOutputVolumeNotZero() {
         DefaultValues.readUserDefaults()
         if DefaultValues.Defaults.outputVolume == 0 {
@@ -173,7 +165,6 @@ class MainViewController: UIViewController {
     
     @IBAction func touchButtonPressed(_ sender: AnyObject) {
         activateEvent()
-        clearDataStoreProgressLabel()
     }
     
     @IBAction func nextButtonPressed(_ sender: AnyObject) {
@@ -256,45 +247,6 @@ class MainViewController: UIViewController {
         updatePreparedEventLabel(preparedEventNumber: preparedEventIndex)
     }
     
-    private func clearDataStoreProgressLabel() {
-        dataStoreProgressLabel.text = ""
-    }
-    
-    // MARK: - Score and Audio File Management
-    
-    private func manageScoreAndAudioFiles() {
-        
-        guard !appDelegate.scoreIsPresent else {
-            prepareToStartIfScoreIsPresent()
-            return
-        }
-        
-        disableInterfaceElements()
-        updateDataStoreProgressLabel("Retrieving score")
-        retrieveScore()
-    }
-    
-    private func prepareToStartIfScoreIsPresent() {
-        manageAudioFiles()
-    }
-    
-    // FIXME: This is not modelled well!
-    private func manageAudioFiles() {
-        
-        guard !appDelegate.allAudioFilesArePresent else {
-            updateDataStoreProgressLabel("Audio files are ready")
-            prepareToPlayFirstAudioFile()
-            return
-        }
-        
-        let audioFilesNeedingDownload = audioFilesUnavailableLocally
-        if !audioFilesNeedingDownload.isEmpty {
-            presentAudioFilesDownloadAlert(names: audioFilesNeedingDownload)
-        } else {
-            prepareToPlayFirstAudioFile()
-        }
-    }
-    
     // FIXME: Rename to currentAudioFile, perhaps reuse other method
     private func prepareToPlayFirstAudioFile() {
         
@@ -306,138 +258,6 @@ class MainViewController: UIViewController {
             name: events.current.soundFileName,
             volume: events.current.gain
         )
-    }
-    
-    private func retrieveScore() {
-        do {
-            clearDataStoreProgressLabel()
-            let yamlScore = try DataStore.retrieveScoreFromLocalStore(name: "voice_unrooted")
-            appDelegate.scoreIsPresent = true
-            try events.populate(with: yamlScore)
-            manageAudioFiles()
-            
-        } catch {
-            presentScoreDownloadAlert()
-        }
-    }
-    
-    private func presentAudioFilesDownloadAlert(names: [String]) {
-        
-        if names.isEmpty { return }
-        
-        let alert = UIAlertController.downloadPermissionAlert(
-            title: "There are audio files that still need to be downloaded",
-            message: "Download remaining audio files?",
-            sourceView: self.view
-        )
-        {
-            self.disableInterfaceElements()
-            self.downloadAudioFiles(names: names)
-        }
-        
-        present(alert, animated: false)
-    }
-    
-    private func downloadAudioFiles(names: [String]) {
-        do {
-            var i = 1
-            
-            try DataStore.retrieveAudioFilesFromNetwork(audioFileNames: names) {
-                
-                self.updateDataStoreProgressLabel(amount: i, of: names.count)
-                
-                if i == names.count {
-                    self.updateDataStoreProgressLabelUponCompletion()
-                    self.prepareToPlayFirstAudioFile()
-                }
-                
-                i += 1
-            }
-            
-        } catch {
-            DispatchQueue.main.async {
-                self.updateDataStoreProgressLabel("Unable to download audio files!")
-            }
-        }
-    }
-    
-    private func presentScoreDownloadAlert() {
-        
-        // Create an alert that prompts the user to download the score
-        let alert = UIAlertController.downloadPermissionAlert(
-            title: "The score cannot be found on the device",
-            message: "Download the score?",
-            sourceView: self.view,
-            performingUponPermission: downloadScore
-        )
-        
-        present(alert, animated: false)
-    }
-    
-    private func downloadScore() {
-        
-        updateUIBeforeScoreRetrieval()
-        
-        do {
-            try DataStore.retrieveScoreFromNetwork(pieceName: "voice_unrooted") {
-                
-                // Upon successful retrieval of score from network, do:
-                self.processScoreFromLocalStore()
-                self.restoreUIAfterScoreProcessing()
-                self.manageAudioFiles()
-            }
-        } catch {
-
-            DispatchQueue.main.async {
-                self.updateDataStoreProgressLabel("Unable to download score")
-            }
-        }
-    }
-    
-    private func processScoreFromLocalStore() {
-        
-        do {
-            updateUIBeforeScoreProcessing()
-            let yamlScore = try DataStore.retrieveScoreFromLocalStore(name: "voice_unrooted")
-            try events.populate(with: yamlScore)
-        } catch {
-            // TODO: Error message
-        }
-    }
-    
-    private func updateUIBeforeScoreRetrieval() {
-        updateDataStoreProgressLabel("Retrieving score from network")
-    }
-    
-    private func updateUIBeforeScoreProcessing() {
-        updateDataStoreProgressLabel("Processing score")
-    }
-    
-    private func restoreUIAfterScoreProcessing() {
-        clearDataStoreProgressLabel()
-    }
-    
-    private func updateDataStoreProgressLabel(
-        amount audioFilesDownloaded: Int,
-        of total: Int
-    )
-    {
-        updateDataStoreProgressLabel(
-            "Downloading \(audioFilesDownloaded)/\(total) audio files"
-        )
-    }
-    
-    private func updateDataStoreProgressLabelUponCompletion() {
-        updateDataStoreProgressLabel("Audio files ready")
-    }
-    
-    private var audioFilesUnavailableLocally: [String] {
-        let names = events.map { $0.soundFileName }
-        return DataStore.audioFilesUnavailableLocally(from: names)
-    }
-    
-    private func updateDataStoreProgressLabel(_ text: String) {
-        dataStoreProgressLabel.text = text
     }
     
     // MARK: - Interface Elements
@@ -481,9 +301,6 @@ class MainViewController: UIViewController {
     
     // TODO: use slightly more explicit naming here (configureVisualAttributes() or sim.)
     private func configureAppearance() {
-        
-        print("configure appearance")
-        
         view.backgroundColor = Color.light
         viewGroupCounters.backgroundColor = Color.dark
         viewGroupExpert.backgroundColor = Color.dark

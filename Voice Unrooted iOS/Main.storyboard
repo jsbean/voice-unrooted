@@ -42,7 +42,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Voice_Unrooted_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MainViewController" storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Voice_Unrooted_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bxf-BF-OwP"/>
                         <viewControllerLayoutGuide type="bottom" id="sdC-Rp-2wW"/>
@@ -324,11 +324,11 @@
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-D2-1mI">
-                                        <rect key="frame" x="8" y="41" width="345" height="30"/>
+                                        <rect key="frame" x="8" y="41" width="361" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aON-ad-hhZ" userLabel="slider sf mod">
-                                                <rect key="frame" x="-2" y="0.0" width="349" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="365" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="pHh-5x-wfa"/>
                                                 </constraints>
@@ -346,15 +346,6 @@
                                     <constraint firstItem="QBX-mM-k5U" firstAttribute="leading" secondItem="P6y-xE-OnF" secondAttribute="leading" constant="12" id="uGe-r7-PHq"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-S0-VHg">
-                                <rect key="frame" x="348" y="736" width="328" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="328" id="ild-ak-emp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.75" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -364,7 +355,6 @@
                             <constraint firstItem="fSS-qc-F6n" firstAttribute="leading" secondItem="Zo8-zn-UGO" secondAttribute="leading" id="75k-7Y-vCQ"/>
                             <constraint firstItem="fSS-qc-F6n" firstAttribute="top" secondItem="udn-n5-euq" secondAttribute="top" id="Cdc-TG-c2j"/>
                             <constraint firstItem="7JY-Cg-I1U" firstAttribute="top" secondItem="P6y-xE-OnF" secondAttribute="bottom" constant="33" id="DG1-JX-cYY"/>
-                            <constraint firstItem="XtW-S0-VHg" firstAttribute="centerY" secondItem="nFX-rh-jNe" secondAttribute="centerY" id="G5i-ie-NAa"/>
                             <constraint firstItem="Zo8-zn-UGO" firstAttribute="centerX" secondItem="nFX-rh-jNe" secondAttribute="centerX" id="Qh7-dB-clu"/>
                             <constraint firstItem="Zo8-zn-UGO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="459" id="S4y-VK-bwT"/>
                             <constraint firstItem="fSS-qc-F6n" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="109" id="SOG-sQ-rNl"/>
@@ -380,7 +370,6 @@
                             <constraint firstItem="Zo8-zn-UGO" firstAttribute="top" secondItem="fSS-qc-F6n" secondAttribute="bottom" constant="8" symbolic="YES" id="nAo-rP-1eI"/>
                             <constraint firstItem="Zo8-zn-UGO" firstAttribute="top" secondItem="xoN-UW-Jz8" secondAttribute="bottom" constant="8" symbolic="YES" id="ohw-7w-5Oi"/>
                             <constraint firstItem="udn-n5-euq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="335" id="tAU-5z-9le"/>
-                            <constraint firstItem="XtW-S0-VHg" firstAttribute="centerX" secondItem="nFX-rh-jNe" secondAttribute="centerX" id="tNp-L6-N5h"/>
                             <constraint firstItem="udn-n5-euq" firstAttribute="leading" secondItem="fSS-qc-F6n" secondAttribute="trailing" constant="8" symbolic="YES" id="vpS-gK-5Ek"/>
                             <constraint firstItem="P6y-xE-OnF" firstAttribute="leading" secondItem="7JY-Cg-I1U" secondAttribute="leading" id="zXm-FX-pjo"/>
                         </constraints>
@@ -391,7 +380,6 @@
                     <connections>
                         <outlet property="appNameLabel" destination="tJB-dn-MIW" id="GmM-1N-AFu"/>
                         <outlet property="appVersionLabel" destination="aat-7P-dJL" id="WiT-yC-GMr"/>
-                        <outlet property="dataStoreProgressLabel" destination="XtW-S0-VHg" id="WID-BP-79m"/>
                         <outlet property="eventNumberLabel" destination="msi-8W-9k6" id="KSU-GE-5Zx"/>
                         <outlet property="masterSlaveSelect" destination="7JY-Cg-I1U" id="6F8-8M-c3u"/>
                         <outlet property="metronome" destination="fEb-uF-ddE" id="EWN-k3-uuD"/>
@@ -764,7 +752,7 @@
         <!--Navigation Controller-->
         <scene sceneID="A4g-vP-VmD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T3v-0N-uGl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="T3v-0N-uGl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gPt-D1-uQ7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

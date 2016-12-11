@@ -13,7 +13,7 @@ class WelcomeViewController: UIViewController {
     // FIXME: Remove dependency on this if possible
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    // The events to be executed.
+    // The events to be populated.
     private let events = EventCollection()
 
     @IBOutlet weak var startButton: UIButton!
@@ -30,20 +30,29 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
-        print("start button pressed")
+        presentMainViewController()
     }
+    
+    private func presentMainViewController() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let controller = storyboard.instantiateViewController(
+            withIdentifier: "NavigationController"
+        )
+        
+        present(controller, animated: false, completion: nil)
+    }
+    
     // MARK: - Score and Audio File Management
     
     private func manageScoreAndAudioFiles() {
-        
-        print("manage score and audio files")
         
         guard !appDelegate.scoreIsPresent else {
             showStartButton()
             return
         }
         
-        //disableInterfaceElements()
         updateDataStoreProgressLabel("Retrieving score")
         retrieveScore()
     }
@@ -55,7 +64,7 @@ class WelcomeViewController: UIViewController {
         
         guard !appDelegate.allAudioFilesArePresent else {
             updateDataStoreProgressLabel("Audio files are ready")
-            self.startButton.isHidden = false
+            showStartButton()
             return
         }
         
@@ -63,7 +72,7 @@ class WelcomeViewController: UIViewController {
         if !audioFilesNeedingDownload.isEmpty {
             presentAudioFilesDownloadAlert(names: audioFilesNeedingDownload)
         } else {
-            self.startButton.isHidden = false
+            showStartButton()
         }
     }
     
@@ -74,7 +83,6 @@ class WelcomeViewController: UIViewController {
             appDelegate.scoreIsPresent = true
             try events.populate(with: yamlScore)
             manageAudioFiles()
-            
         } catch {
             presentScoreDownloadAlert()
         }
@@ -110,8 +118,7 @@ class WelcomeViewController: UIViewController {
                 //
                 if i == names.count {
                     self.updateDataStoreProgressLabelUponCompletion()
-                    self.startButton.isHidden = false
-                    //self.prepareToPlayFirstAudioFile()
+                    self.hideStartButton()
                 }
                 
                 i += 1

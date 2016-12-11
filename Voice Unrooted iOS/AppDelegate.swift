@@ -35,7 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // TODO: make a final mixer, which is the output of `AudioKit`.
         AudioKit.output = audioPlayerPool
         
-        AKSettings.bufferLength = .shortest
+        // Set buffer length to 128 samples
+        AKSettings.bufferLength = .short
         
         // TODO: ensure that `AudioKit` is fully configured.
         AudioKit.start()

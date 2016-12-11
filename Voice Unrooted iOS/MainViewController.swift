@@ -54,6 +54,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var preparedEventNumberLabel: UILabel!
     @IBOutlet weak var outputVolumeSlider: UISlider!
     @IBOutlet weak var outputVolumeSliderLabel: UILabel!
+    
+    // TODO: Move to `WelcomeViewController`.
     @IBOutlet weak var dataStoreProgressLabel: UILabel!
     
     public override var canBecomeFirstResponder: Bool {
@@ -262,6 +264,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Score and Audio File Management
     
+    // TODO: Move to `WelcomeViewController`.
     private func manageScoreAndAudioFiles() {
         
         guard !appDelegate.scoreIsPresent else {
@@ -274,10 +277,12 @@ class MainViewController: UIViewController {
         retrieveScore()
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func prepareToStartIfScoreIsPresent() {
         manageAudioFiles()
     }
     
+    // TODO: Move to `WelcomeViewController`.
     // FIXME: This is not modelled well!
     private func manageAudioFiles() {
         
@@ -308,6 +313,7 @@ class MainViewController: UIViewController {
         )
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func retrieveScore() {
         do {
             clearDataStoreProgressLabel()
@@ -321,6 +327,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func presentAudioFilesDownloadAlert(names: [String]) {
         
         if names.isEmpty { return }
@@ -338,6 +345,7 @@ class MainViewController: UIViewController {
         present(alert, animated: false)
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func downloadAudioFiles(names: [String]) {
         do {
             var i = 1
@@ -361,6 +369,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func presentScoreDownloadAlert() {
         
         // Create an alert that prompts the user to download the score
@@ -374,6 +383,7 @@ class MainViewController: UIViewController {
         present(alert, animated: false)
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func downloadScore() {
         
         updateUIBeforeScoreRetrieval()
@@ -394,6 +404,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func processScoreFromLocalStore() {
         
         do {
@@ -405,18 +416,22 @@ class MainViewController: UIViewController {
         }
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func updateUIBeforeScoreRetrieval() {
         updateDataStoreProgressLabel("Retrieving score from network")
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func updateUIBeforeScoreProcessing() {
         updateDataStoreProgressLabel("Processing score")
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func restoreUIAfterScoreProcessing() {
         clearDataStoreProgressLabel()
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func updateDataStoreProgressLabel(
         amount audioFilesDownloaded: Int,
         of total: Int
@@ -427,15 +442,18 @@ class MainViewController: UIViewController {
         )
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func updateDataStoreProgressLabelUponCompletion() {
         updateDataStoreProgressLabel("Audio files ready")
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private var audioFilesUnavailableLocally: [String] {
         let names = events.map { $0.soundFileName }
         return DataStore.audioFilesUnavailableLocally(from: names)
     }
     
+    // TODO: Move to `WelcomeViewController`.
     private func updateDataStoreProgressLabel(_ text: String) {
         dataStoreProgressLabel.text = text
     }

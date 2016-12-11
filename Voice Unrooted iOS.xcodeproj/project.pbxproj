@@ -22,6 +22,7 @@
 		070E2A251DF773F4008F4845 /* ProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070E2A261DF773F4008F4845 /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; };
 		070E2A271DF773F4008F4845 /* Timeline.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		071309861DFE039E008DA4A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071309851DFE039E008DA4A5 /* WelcomeViewController.swift */; };
 		078A81EC1DF66942001F069B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A81EB1DF66942001F069B /* AppDelegate.swift */; };
 		078A81F31DF66943001F069B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F21DF66943001F069B /* Assets.xcassets */; };
 		078A81F61DF66943001F069B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F41DF66943001F069B /* LaunchScreen.storyboard */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		070459121DF77E2000A83366 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		071309851DFE039E008DA4A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		078A81E81DF66942001F069B /* Voice Unrooted iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Unrooted iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078A81EB1DF66942001F069B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		078A81F21DF66943001F069B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Voice Unrooted iOS/Assets.xcassets"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				078A82431DF66E68001F069B /* SelectEventViewController.swift */,
 				078A82441DF66E68001F069B /* SettingsViewController.swift */,
 				078A82411DF66E61001F069B /* DownloadPermissionAlertController.swift */,
+				071309851DFE039E008DA4A5 /* WelcomeViewController.swift */,
 				078A822F1DF66E1C001F069B /* MainViewController.swift */,
 				078A82471DF66E8B001F069B /* Color.swift */,
 			);
@@ -440,6 +443,7 @@
 				078A82371DF66E3B001F069B /* Event+YAML.swift in Sources */,
 				078A82301DF66E1C001F069B /* MainViewController.swift in Sources */,
 				078A82631DF67255001F069B /* YAMLTokenizer.swift in Sources */,
+				071309861DFE039E008DA4A5 /* WelcomeViewController.swift in Sources */,
 				078A82361DF66E3B001F069B /* Event.swift in Sources */,
 				078A82621DF67255001F069B /* YAMLResult.swift in Sources */,
 				078A824A1DF66E90001F069B /* DefaultValues.swift in Sources */,

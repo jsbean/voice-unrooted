@@ -707,10 +707,10 @@
             </objects>
             <point key="canvasLocation" x="2665" y="604"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="H0M-uL-Vyv">
             <objects>
-                <viewController id="9w7-Ts-tZh" sceneMemberID="viewController">
+                <viewController id="9w7-Ts-tZh" customClass="WelcomeViewController" customModule="Voice_Unrooted_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qlw-f7-7ce"/>
                         <viewControllerLayoutGuide type="bottom" id="sDw-Mk-XSd"/>

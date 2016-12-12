@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Timeline
 
 class SettingsViewController: UIViewController {
     
@@ -29,6 +30,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var button442: UIButton!
     @IBOutlet weak var button443: UIButton!
     @IBOutlet weak var button444: UIButton!
+    
+    weak var timeline: Timeline!
     
     @IBAction func button438pressed(_ sender: AnyObject) {
         tuningSlider.value = 438
@@ -100,13 +103,19 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func loudspeakerTestSwitchChanged(_ sender: AnyObject) {
+        
         if loudspeakerTestSwitch.isOn {
-            appDelegate?.audioPlayerPool.play(
-                name: "loudspeakertest",
-                baseDir: .resources,
-                looping: true
-            )
+            timeline = Timeline()
+            timeline.addLooping(interval: 10) {
+                self.appDelegate?.audioPlayerPool.play(
+                    name: "loudspeakertest",
+                    baseDir: .resources,
+                    looping: true
+                )
+            }
+            timeline.start()
         } else {
+            timeline?.stop()
             appDelegate?.audioPlayerPool.stopAll()
         }
     }

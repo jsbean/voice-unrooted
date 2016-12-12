@@ -364,6 +364,13 @@ class MainViewController: UIViewController {
             scheduleMetronomeFlashes(at: event.tempo, for: event.progressBarTime)
         }
         
+        if DefaultValues.Defaults.autoPlayIsEngaged {
+            
+            timeline.add(at: event.progressBarTime) {
+                self.activateEvent()
+            }
+        }
+        
         timeline.start()
     }
     

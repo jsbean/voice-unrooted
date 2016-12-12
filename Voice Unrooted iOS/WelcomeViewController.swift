@@ -20,6 +20,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = Color.light
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="9w7-Ts-tZh">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -324,11 +324,11 @@
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-D2-1mI">
-                                        <rect key="frame" x="8" y="41" width="361" height="30"/>
+                                        <rect key="frame" x="8" y="41" width="369" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aON-ad-hhZ" userLabel="slider sf mod">
-                                                <rect key="frame" x="-2" y="0.0" width="365" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="373" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="pHh-5x-wfa"/>
                                                 </constraints>
@@ -704,31 +704,40 @@
                         <viewControllerLayoutGuide type="bottom" id="sDw-Mk-XSd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="F1T-9H-GNG">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="voice unrooted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deG-vH-b8j">
-                                <rect key="frame" x="327" y="502" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="voice unrooted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deG-vH-b8j">
+                                <rect key="frame" x="21" y="654" width="313" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJi-cx-Zjr">
-                                <rect key="frame" x="254" y="531" width="261" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hans Tutschku" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxk-mf-Nge">
+                                <rect key="frame" x="20" y="709" width="315" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJi-cx-Zjr">
+                                <rect key="frame" x="743" y="727" width="261" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="261" id="rrn-LO-AJY"/>
+                                    <constraint firstAttribute="width" constant="261" id="xqM-Vf-6uJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="oJi-cx-Zjr" firstAttribute="top" secondItem="deG-vH-b8j" secondAttribute="bottom" constant="8" symbolic="YES" id="TSn-bC-Mt2"/>
-                            <constraint firstItem="oJi-cx-Zjr" firstAttribute="centerX" secondItem="deG-vH-b8j" secondAttribute="centerX" id="ciQ-pL-EZI"/>
-                            <constraint firstItem="deG-vH-b8j" firstAttribute="centerX" secondItem="F1T-9H-GNG" secondAttribute="centerX" id="eSS-E3-oQg"/>
-                            <constraint firstItem="deG-vH-b8j" firstAttribute="centerY" secondItem="F1T-9H-GNG" secondAttribute="centerY" id="ret-4i-1lL"/>
+                            <constraint firstItem="Kxk-mf-Nge" firstAttribute="bottom" secondItem="oJi-cx-Zjr" secondAttribute="bottom" id="8Bg-WI-Fjh"/>
+                            <constraint firstItem="oJi-cx-Zjr" firstAttribute="trailing" secondItem="F1T-9H-GNG" secondAttribute="trailingMargin" id="Oce-uX-guY"/>
+                            <constraint firstAttribute="bottom" secondItem="Kxk-mf-Nge" secondAttribute="bottom" constant="20" symbolic="YES" id="OuM-PT-2v2"/>
+                            <constraint firstItem="sDw-Mk-XSd" firstAttribute="top" secondItem="deG-vH-b8j" secondAttribute="bottom" constant="56" id="aL7-1S-itt"/>
+                            <constraint firstItem="deG-vH-b8j" firstAttribute="leading" secondItem="F1T-9H-GNG" secondAttribute="leadingMargin" constant="1" id="jPh-ZE-rm8"/>
+                            <constraint firstItem="Kxk-mf-Nge" firstAttribute="leading" secondItem="F1T-9H-GNG" secondAttribute="leadingMargin" id="x1R-OC-VUc"/>
+                            <constraint firstItem="deG-vH-b8j" firstAttribute="centerX" secondItem="Kxk-mf-Nge" secondAttribute="centerX" id="yiw-G4-6E3"/>
                         </constraints>
                     </view>
                     <connections>
@@ -760,7 +769,7 @@
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

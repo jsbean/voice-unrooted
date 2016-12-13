@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var button443: UIButton!
     @IBOutlet weak var button444: UIButton!
     
-    weak var timeline: Timeline!
+    var timeline: Timeline!
     
     @IBAction func button438pressed(_ sender: AnyObject) {
         tuningSlider.value = 438

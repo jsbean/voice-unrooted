@@ -95,7 +95,7 @@ final class AudioPlayerPool: AKMixer {
     ///
     /// - TODO: Fade out all audio players other than current.
     public func fadeOutPrevious(over duration: Double) {
-        let previousIndex = Int.mod(index - 2, audioPlayers.count)
+        let previousIndex = mod(index - 2, audioPlayers.count)
         let previousPlayer = audioPlayers[previousIndex]
         Fader(audioPlayer: previousPlayer).fadeOut(over: duration)
     }

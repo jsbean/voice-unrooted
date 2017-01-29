@@ -12,17 +12,15 @@
 		070E2A1B1DF773F4008F4845 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820C1DF66BA5001F069B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070E2A1C1DF773F4008F4845 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820D1DF66BA5001F069B /* ArithmeticTools.framework */; };
 		070E2A1D1DF773F4008F4845 /* ArithmeticTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820D1DF66BA5001F069B /* ArithmeticTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		070E2A1E1DF773F4008F4845 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820E1DF66BA5001F069B /* ArrayTools.framework */; };
-		070E2A1F1DF773F4008F4845 /* ArrayTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820E1DF66BA5001F069B /* ArrayTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070E2A201DF773F4008F4845 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820F1DF66BA5001F069B /* AudioKit.framework */; };
 		070E2A211DF773F4008F4845 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A820F1DF66BA5001F069B /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		070E2A221DF773F4008F4845 /* DictionaryTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82101DF66BA5001F069B /* DictionaryTools.framework */; };
-		070E2A231DF773F4008F4845 /* DictionaryTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82101DF66BA5001F069B /* DictionaryTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070E2A241DF773F4008F4845 /* ProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; };
 		070E2A251DF773F4008F4845 /* ProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82111DF66BA5001F069B /* ProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070E2A261DF773F4008F4845 /* Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; };
 		070E2A271DF773F4008F4845 /* Timeline.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 078A82121DF66BA5001F069B /* Timeline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		071309861DFE039E008DA4A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071309851DFE039E008DA4A5 /* WelcomeViewController.swift */; };
+		075254D41E3E548C00C6575E /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075254D31E3E548C00C6575E /* Collections.framework */; };
+		075254D51E3E548C00C6575E /* Collections.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 075254D31E3E548C00C6575E /* Collections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		078A81EC1DF66942001F069B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A81EB1DF66942001F069B /* AppDelegate.swift */; };
 		078A81F31DF66943001F069B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F21DF66943001F069B /* Assets.xcassets */; };
 		078A81F61DF66943001F069B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F41DF66943001F069B /* LaunchScreen.storyboard */; };
@@ -71,10 +69,9 @@
 			files = (
 				070E2A211DF773F4008F4845 /* AudioKit.framework in Embed Frameworks */,
 				070E2A251DF773F4008F4845 /* ProgressBar.framework in Embed Frameworks */,
+				075254D51E3E548C00C6575E /* Collections.framework in Embed Frameworks */,
 				070E2A271DF773F4008F4845 /* Timeline.framework in Embed Frameworks */,
-				070E2A231DF773F4008F4845 /* DictionaryTools.framework in Embed Frameworks */,
 				070E2A1D1DF773F4008F4845 /* ArithmeticTools.framework in Embed Frameworks */,
-				070E2A1F1DF773F4008F4845 /* ArrayTools.framework in Embed Frameworks */,
 				070E2A1B1DF773F4008F4845 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -85,6 +82,7 @@
 /* Begin PBXFileReference section */
 		070459121DF77E2000A83366 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		071309851DFE039E008DA4A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		075254D31E3E548C00C6575E /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
 		078A81E81DF66942001F069B /* Voice Unrooted iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Unrooted iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078A81EB1DF66942001F069B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		078A81F21DF66943001F069B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Voice Unrooted iOS/Assets.xcassets"; sourceTree = "<group>"; };
@@ -95,9 +93,7 @@
 		078A82021DF66943001F069B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		078A820C1DF66BA5001F069B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		078A820D1DF66BA5001F069B /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
-		078A820E1DF66BA5001F069B /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/iOS/ArrayTools.framework; sourceTree = "<group>"; };
 		078A820F1DF66BA5001F069B /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
-		078A82101DF66BA5001F069B /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/iOS/DictionaryTools.framework; sourceTree = "<group>"; };
 		078A82111DF66BA5001F069B /* ProgressBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProgressBar.framework; path = Carthage/Build/iOS/ProgressBar.framework; sourceTree = "<group>"; };
 		078A82121DF66BA5001F069B /* Timeline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timeline.framework; path = Carthage/Build/iOS/Timeline.framework; sourceTree = "<group>"; };
 		078A821E1DF66C93001F069B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
@@ -132,10 +128,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				070E2A1E1DF773F4008F4845 /* ArrayTools.framework in Frameworks */,
 				070E2A1C1DF773F4008F4845 /* ArithmeticTools.framework in Frameworks */,
 				070E2A241DF773F4008F4845 /* ProgressBar.framework in Frameworks */,
-				070E2A221DF773F4008F4845 /* DictionaryTools.framework in Frameworks */,
+				075254D41E3E548C00C6575E /* Collections.framework in Frameworks */,
 				070E2A201DF773F4008F4845 /* AudioKit.framework in Frameworks */,
 				070E2A261DF773F4008F4845 /* Timeline.framework in Frameworks */,
 				070E2A1A1DF773F4008F4845 /* Alamofire.framework in Frameworks */,
@@ -155,6 +150,7 @@
 		078A81DF1DF66942001F069B = {
 			isa = PBXGroup;
 			children = (
+				075254D31E3E548C00C6575E /* Collections.framework */,
 				078A82221DF66CD2001F069B /* Supporting Files */,
 				078A821C1DF66BA8001F069B /* Frameworks */,
 				078A81EA1DF66942001F069B /* Voice Unrooted iOS */,
@@ -202,9 +198,7 @@
 				078A821D1DF66C82001F069B /* ProgressMeterView */,
 				078A820C1DF66BA5001F069B /* Alamofire.framework */,
 				078A820D1DF66BA5001F069B /* ArithmeticTools.framework */,
-				078A820E1DF66BA5001F069B /* ArrayTools.framework */,
 				078A820F1DF66BA5001F069B /* AudioKit.framework */,
-				078A82101DF66BA5001F069B /* DictionaryTools.framework */,
 				078A82111DF66BA5001F069B /* ProgressBar.framework */,
 				078A82121DF66BA5001F069B /* Timeline.framework */,
 			);
@@ -410,8 +404,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/DictionaryTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Collections.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Timeline.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Audiokit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ProgressBar.framework",

@@ -2,10 +2,10 @@
 Repository for the app score of Hans Tutschku's `voice unrooted` for soprano and electronics.
 
 ## Toolchain
-- Xcode 8.1
+- Xcode 8.2
 - [Carthage](https://github.com/Carthage/Carthage) for dependency management
 
 ## Installation Instructions
 - `git clone https://github.com/jsbean/voice-unrooted`
 - `cd voice-unrooted`
-- `carthage update --platform iOS --no-use-binaries # get some tea`
+- `carthage update --platform iOS`

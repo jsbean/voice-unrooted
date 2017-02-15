@@ -21,6 +21,9 @@
 		071309861DFE039E008DA4A5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071309851DFE039E008DA4A5 /* WelcomeViewController.swift */; };
 		075254D41E3E548C00C6575E /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075254D31E3E548C00C6575E /* Collections.framework */; };
 		075254D51E3E548C00C6575E /* Collections.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 075254D31E3E548C00C6575E /* Collections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0784DFFB1E54E5EC006CC2FE /* AirTurnConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784DFFA1E54E5EC006CC2FE /* AirTurnConnectionManager.swift */; };
+		0784DFFD1E54E619006CC2FE /* AirTurnInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0784DFFC1E54E619006CC2FE /* AirTurnInterface.framework */; };
+		0784DFFE1E54E619006CC2FE /* AirTurnInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0784DFFC1E54E619006CC2FE /* AirTurnInterface.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		078A81EC1DF66942001F069B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A81EB1DF66942001F069B /* AppDelegate.swift */; };
 		078A81F31DF66943001F069B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F21DF66943001F069B /* Assets.xcassets */; };
 		078A81F61DF66943001F069B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 078A81F41DF66943001F069B /* LaunchScreen.storyboard */; };
@@ -69,6 +72,7 @@
 			files = (
 				070E2A211DF773F4008F4845 /* AudioKit.framework in Embed Frameworks */,
 				070E2A251DF773F4008F4845 /* ProgressBar.framework in Embed Frameworks */,
+				0784DFFE1E54E619006CC2FE /* AirTurnInterface.framework in Embed Frameworks */,
 				075254D51E3E548C00C6575E /* Collections.framework in Embed Frameworks */,
 				070E2A271DF773F4008F4845 /* Timeline.framework in Embed Frameworks */,
 				070E2A1D1DF773F4008F4845 /* ArithmeticTools.framework in Embed Frameworks */,
@@ -83,6 +87,8 @@
 		070459121DF77E2000A83366 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		071309851DFE039E008DA4A5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		075254D31E3E548C00C6575E /* Collections.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Collections.framework; path = Carthage/Build/iOS/Collections.framework; sourceTree = "<group>"; };
+		0784DFFA1E54E5EC006CC2FE /* AirTurnConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirTurnConnectionManager.swift; sourceTree = "<group>"; };
+		0784DFFC1E54E619006CC2FE /* AirTurnInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AirTurnInterface.framework; sourceTree = "<group>"; };
 		078A81E81DF66942001F069B /* Voice Unrooted iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Unrooted iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		078A81EB1DF66942001F069B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		078A81F21DF66943001F069B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Voice Unrooted iOS/Assets.xcassets"; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			files = (
 				070E2A1C1DF773F4008F4845 /* ArithmeticTools.framework in Frameworks */,
 				070E2A241DF773F4008F4845 /* ProgressBar.framework in Frameworks */,
+				0784DFFD1E54E619006CC2FE /* AirTurnInterface.framework in Frameworks */,
 				075254D41E3E548C00C6575E /* Collections.framework in Frameworks */,
 				070E2A201DF773F4008F4845 /* AudioKit.framework in Frameworks */,
 				070E2A261DF773F4008F4845 /* Timeline.framework in Frameworks */,
@@ -150,7 +157,6 @@
 		078A81DF1DF66942001F069B = {
 			isa = PBXGroup;
 			children = (
-				075254D31E3E548C00C6575E /* Collections.framework */,
 				078A82221DF66CD2001F069B /* Supporting Files */,
 				078A821C1DF66BA8001F069B /* Frameworks */,
 				078A81EA1DF66942001F069B /* Voice Unrooted iOS */,
@@ -176,6 +182,7 @@
 				078A82291DF66D57001F069B /* Audio Playback */,
 				078A82281DF66D51001F069B /* ViewControllers */,
 				078A81EB1DF66942001F069B /* AppDelegate.swift */,
+				0784DFFA1E54E5EC006CC2FE /* AirTurnConnectionManager.swift */,
 				078A82491DF66E90001F069B /* DefaultValues.swift */,
 				078A81F41DF66943001F069B /* LaunchScreen.storyboard */,
 			);
@@ -196,7 +203,9 @@
 			children = (
 				078A824B1DF66ED3001F069B /* YamlSwift */,
 				078A821D1DF66C82001F069B /* ProgressMeterView */,
+				0784DFFC1E54E619006CC2FE /* AirTurnInterface.framework */,
 				078A820C1DF66BA5001F069B /* Alamofire.framework */,
+				075254D31E3E548C00C6575E /* Collections.framework */,
 				078A820D1DF66BA5001F069B /* ArithmeticTools.framework */,
 				078A820F1DF66BA5001F069B /* AudioKit.framework */,
 				078A82111DF66BA5001F069B /* ProgressBar.framework */,
@@ -430,6 +439,7 @@
 				078A82481DF66E8B001F069B /* Color.swift in Sources */,
 				078A82421DF66E61001F069B /* DownloadPermissionAlertController.swift in Sources */,
 				078A823E1DF66E55001F069B /* AudioPlayerPool.swift in Sources */,
+				0784DFFB1E54E5EC006CC2FE /* AirTurnConnectionManager.swift in Sources */,
 				078A81EC1DF66942001F069B /* AppDelegate.swift in Sources */,
 				078A82461DF66E68001F069B /* SettingsViewController.swift in Sources */,
 				078A823F1DF66E55001F069B /* Fader.swift in Sources */,
@@ -583,6 +593,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Voice Unrooted iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -606,6 +617,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Voice Unrooted iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

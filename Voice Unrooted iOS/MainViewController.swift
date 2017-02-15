@@ -10,6 +10,23 @@ import UIKit
 import AudioKit
 import Timeline
 import ProgressBar
+import AirTurnInterface
+
+// TODO: Move to own structure
+let EnabledUserDefaultKey = "AirTurnEnabled"
+let AutomaticKeyboardManagementUserDefaultKey = "AirTurnAutomaticKeyboardManagement"
+let InitialModeDefaultKey = "AirTurnBTLEMode"
+let AirTurnUIShouldRestoreUserInfoKey = "AirTurnUIRestoreState"
+
+extension Notification.Name {
+    
+    public enum AirTurn {
+        
+        public static let airTurnKeyboardManagerReadyNotification = Notification.Name(
+            rawValue: "AirTurnKeyboardManagerReadyNotification"
+        )
+    }
+}
 
 // FIXME: This ViewController does too much!
 class MainViewController: UIViewController {
@@ -59,6 +76,7 @@ class MainViewController: UIViewController {
         return true
     }
     
+    /*
     public override var keyCommands: [UIKeyCommand]? {
         
         let left = UIKeyCommand(
@@ -87,6 +105,7 @@ class MainViewController: UIViewController {
         
         return [left, right, up, down]
     }
+    */
     
     // MARK: - Initializers
     
@@ -117,7 +136,92 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         prepareToPlayFirstAudioFile()
+        connectAirTurn()
     }
+    
+    // MARK: - AirTurn
+    
+    func connectAirTurn() {
+        
+        if UserDefaults.standard.bool(forKey: InitialModeDefaultKey) {
+            AirTurnCentral.shared().enabled = true
+            NotificationCenter.default.removeObserver(self)
+        } else if AirTurnKeyboardManager.automaticKeyboardManagementAvailable() {
+            if AirTurnKeyboardManager.automaticKeyboardManagementAvailable() {
+                self.keyboardManagerReady()
+            } else {
+                NotificationCenter.default.addObserver(self,
+                   selector: #selector(keyboardManagerReady),
+                   name: Notification.Name.AirTurn.airTurnKeyboardManagerReadyNotification,
+                   object: nil
+                )
+            }
+        } else {
+            AirTurnViewManager.shared().enabled = true
+            NotificationCenter.default.removeObserver(self)
+        }
+
+        // To be notified of button events, add an object as an observer of the button event to NSNotificationCenter.
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(airTurnEvent(_:)),
+            name: NSNotification.Name.AirTurnPedalPress,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(connectionStateChanged(_:)),
+            name: NSNotification.Name.AirTurnConnectionStateChanged,
+            object: nil
+        )
+    }
+    
+    @objc func keyboardManagerReady() {
+        AirTurnViewManager.shared().enabled = true
+        AirTurnKeyboardManager.shared()?.automaticKeyboardManagementEnabled = self.keyboardManagementShouldEnable()
+    }
+    
+    // make computed property
+    func keyboardManagementShouldEnable() -> Bool {
+        
+        // audit keys
+        return (
+            AirTurnKeyboardManager.automaticKeyboardManagementAvailable() &&
+                UserDefaults.standard.object(forKey: AutomaticKeyboardManagementUserDefaultKey) == nil ||
+                UserDefaults.standard.bool(forKey: AutomaticKeyboardManagementUserDefaultKey)
+        )
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func airTurnEvent(_ notification: Notification) {
+        
+        activateEvent()
+        
+        guard
+            let dict = notification.userInfo,
+            let port = dict[AirTurnPortNumberKey] as? NSNumber,
+            let pedal = AirTurnPort(rawValue: port.intValue)
+        else {
+            print("not right info")
+            return
+        }
+        
+        print("port: \(port); pedal: \(pedal)")
+    }
+    
+    func connectionStateChanged(_ notification: Notification) {
+        guard
+            let dict = notification.userInfo as? [String: AnyObject],
+            let number = dict[AirTurnPortNumberKey] as? NSNumber,
+            let state = AirTurnConnectionState(rawValue: number.intValue)
+        else {
+            print("not right info")
+            return
+        }
+    }
+
 
     private func ensureOutputVolumeNotZero() {
         DefaultValues.readUserDefaults()
